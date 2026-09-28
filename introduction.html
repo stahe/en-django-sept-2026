@@ -1,0 +1,1215 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Step-by-Step Introduction to the [Django] Web Framework">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-django-sept-2026/introduction.html">
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="views-routing-responses.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>1. Introduction - Step-by-Step Introduction to the [Django] Web Framework</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Step-by-Step Introduction to the [Django] Web Framework";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Step-by-Step Introduction to the [Django] Web Framework" class="md-header__button md-logo" aria-label="Step-by-Step Introduction to the [Django] Web Framework" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Step-by-Step Introduction to the [Django] Web Framework
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-django-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Step-by-Step Introduction to the [Django] Web Framework" class="md-nav__button md-logo" aria-label="Step-by-Step Introduction to the [Django] Web Framework" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Step-by-Step Introduction to the [Django] Web Framework
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-django-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="introduction.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-djangos-role-in-a-web-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Django’s Role in a Web Application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-tools-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Tools Used
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-run-the-case-study" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Run the case study
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3. Run the case study">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-installing-laragon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3.1. Installing Laragon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-performing-the-case-study" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3.2. Performing the Case Study
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-document-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5. Document Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="views-routing-responses.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Views, Routing, Responses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-view-template.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. The view template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="templates-and-forms.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Templates and Forms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="internationalization.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Internationalization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="data-scopes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Data Scopes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-lifecycle-of-a-request.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. The Lifecycle of a Request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="authentication-and-authorization.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Authentication and Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="layered-architecture-and-data-access.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Layered Architecture and Data Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="interim-conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Interim Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="case-study-the-rdvmedecins-application.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Case Study: The RdvMedecins Application
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="appendices.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Appendices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1-introduction">1. <span style="color: #2e74b5">Introduction</span></h1>
+<p>The document’s PDF is |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQDbRKo1KD-jTY2kQ6-R4P8kAXd0Xlo_gn_fyHmSvmb8txE?e=M3BMfp">HERE</a>|.</p>
+<p>The document’s codes are |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQAa6rF8B0o2R5JEUnxrr5tfAXPV_tRPoXIBRWZWNH0v78w?e=SaEAY6">HERE</a>|.</p>
+<p>This document is a product of <strong>Anthropic’s IA Claude</strong>. It follows the document <a href="https://stahe.github.io/en-symfony-sept-2026/"><u><span style="color: #0563c1">“Step-by-Step Introduction to the [Symfony] Web Framework</span></u></a>” (2026), which itself followed the documents <a href="https://stahe.github.io/en-laravel-sept-2026/"><u><span style="color: #0563c1">“Step-by-Step Introduction to the [Laravel] Web Framework</span></u></a>,” <a href="https://stahe.github.io/en-flask-sept-2026/"><u><span style="color: #0563c1">&quot;Step-by-Step Introduction to the [Flask] Web Framework</span></u></a>,&quot; <a href="https://stahe.github.io/en-springmvc-sept-2026/"><u><span style="color: #0563c1">&quot;Step-by-Step Introduction to the [Spring MVC] Web Framework</span></u></a>,&quot; <a href="https://stahe.github.io/en-aspnetcoremvc-sept-2026/"><u><span style="color: #0563c1">&quot;Step-by-Step Introduction to the [ASP.NET Core MVC] Web Framework</span></u></a>,&quot; and &quot;<a href="https://stahe.github.io/en-nestjs-sept-2026/"><u><span style="color: #0563c1">Step-by-Step Introduction to the [NestJS] Web Framework&quot;</span></u></a> (2026). This document leaves the <em>[PHP]</em> world to return to the <em>[Python]</em> language, that of the <em>[Flask]</em> course, but with a framework of a completely different scale:</p>
+<ul>
+<li>the <em>[Symfony]</em> framework is replaced by the <em>[Django]</em> 6.1 framework, using the <em>[Python]</em> language (version 3.12 or later);</li>
+<li>the <em>[Twig]</em> views are replaced by the <em>[Django]</em> templates, written in its template language, DTL (Django Template Language);</li>
+<li>The Form and Validator components of <em>[Symfony]</em> are replaced by the forms from <em>[Django]</em> (the <strong><em>[django.forms]</em></strong> module), which describe both the fields of a HTML form, their conversion, and their validation;</li>
+<li>the Security component of <em>[Symfony]</em> (firewall, authenticators, roles) is replaced by middleware and decorators written specifically for this purpose, using the <em>[PyJWT]</em> library for JWT tokens and the <em>[bcrypt]</em> library for passwords;</li>
+<li>the event listeners in <em>[Symfony]</em> are replaced by the middleware in <em>[Django]</em>, which wraps the processing of each request, and by its signals;</li>
+<li><em>ORM</em> is replaced by ORM from <em>[Django]</em>, still based on <em>[MySQL]</em>.</li>
+</ul>
+<p>The document closely follows the structure of the <em>[Symfony]</em> course: first, numerous small projects, each focused on a single concept, followed by a comprehensive case study—a web application for scheduling appointments at a medical practice—with all files fully commented. The examples have the same numbers and cover the same topics as in courses <em>[Symfony]</em>, <em>[Laravel]</em>, <em>[Flask]</em>, <em>[Spring MVC]</em>, and <em>[ASP.NET Core MVC]</em>: a reader familiar with one of these courses can compare the frameworks on a case-by-case basis. However, this is not necessary: this document stands on its own and assumes no prior knowledge of these frameworks. The only prerequisites are a basic understanding of web programming (the HTTP protocol, the HTML language) and the fundamentals of the <em>[Python]</em> language (variables, lists, dictionaries, functions, classes, modules). The less common features of <em>[Python]</em> used in the examples (decorators, data classes, type annotations, context managers, generators, etc.) are explained when they first appear.</p>
+<h2 id="11-djangos-role-in-a-web-application">1.1. <span style="color: #2e74b5">Django’s Role in a Web Application</span></h2>
+<p>A web application is often built in layers, with each layer communicating only with its immediate neighbors:</p>
+<p><img src="images/10000000000003E80000014A17C0E9E4.png" width="605" height="200" style="width:16cm;height:5.279cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003E80000014A17C0E9E4.png" /></p>
+<ul>
+<li>the web layer receives requests HTTP from the browser and returns pages HTML to it. This is the layer that <em>[Django]</em> helps us write;</li>
+<li>the business layer contains the application’s business rules (e.g., “a patient can have only one upcoming appointment”). It knows nothing about the web: it could just as easily serve a command-line application;</li>
+<li>the data access layer (DAO layer, for Data Access Object) reads from and writes to the database. We will use the ORM (Object Relational Mapper) from <em>[Django]</em>, which maps table rows to <em>[Python]</em> objects.</li>
+</ul>
+<p>The web layer itself follows the MVC (Model-View-Controller) pattern. This is where you need to pay attention to the terminology, because <em>[Django]</em> does not use the terms from MVC in their usual sense. The documentation for <em>[Django]</em> refers to the MTV architecture (Model–Template–View):</p>
+<ul>
+<li>what MVC calls the controller (C), <em>[Django]</em> calls a view: it is a <em>[Python]</em> function (or a class) that processes a type of request (for example, <strong><em>[GET /agenda]</em></strong>). A view reads the request parameters, invokes the business layer, and then selects the page to display. In the <em>[Symfony]</em> course, this was an action of a controller;</li>
+<li>what MVC calls the view (V), <em>[Django]</em> calls a template: a file HTML that contains expressions <strong><em>[{{ ... }}]</em></strong> and instructions <strong><em>[{% if %}]</em></strong>, <strong><em>[{% for %}]</em></strong>..., which the template engine replaces with data. In the <em>[Symfony]</em> course, it was a view (<em>[Twig]</em>);</li>
+<li>what MVC calls the model (M)—the set of data passed to the page—<em>[Django]</em> calls the template context: a dictionary <em>[Python]</em>;</li>
+<li>finally, what <em>[Django]</em> calls a model is a class <em>[Python]</em> that represents a database table (the file <strong><em>[models.py]</em></strong>): what <em>[Symfony]</em> used to call an entity.</li>
+</ul>
+<p>This document uses the terminology from <em>[Django]</em>, since that is the terminology used in its documentation, error messages, and file names (<strong><em>[views.py]</em></strong>, <strong><em>[templates]</em></strong>, <strong><em>[models.py]</em></strong>): here, a view is therefore always the function <em>[Python]</em> that processes a request, and a template is the file HTML that generates the page. The term “model” has two meanings, which the context always distinguishes: in Chapter 2, a view’s model refers to the data it receives from the request, described by a class; starting in Chapter 7, a model of <em>[Django]</em> is a class of ORM. Finally, the term “page template” (or “layout”) refers to the common template from which other pages inherit (Example 15).</p>
+<p>The processing of a request follows the numbered steps in the diagram:</p>
+<ul>
+<li>1: The browser sends a request, such as <strong><em>HTTP</em></strong>;</li>
+<li>2: The web server receives the request and passes it to the <em>[Django]</em> application via the <strong><em>[application]</em></strong> object in the <strong><em>[config/wsgi.py]</em></strong> file. During development, this server is the one that includes <em>[Django]</em>, launched by the command <strong><em>[python manage.py runserver]</em></strong>; in production, it will be a <em>[Python]</em> server, such as <em>[gunicorn]</em> or <em>[waitress]</em>, often placed behind a web server such as <em>[nginx]</em>. <em>[Django]</em> routes the request through a series of middleware components, classes from <em>[Django]</em>, and the application that intervene before and after the view (session management, anti-CSRF protection, language settings, security, etc.), and compares the requested path to the application’s routes—described in the <strong><em>[urls.py]</em></strong> files—to select the view responsible for handling this request: this is routing;</li>
+<li>3: The view requests the data it needs from the business layer; the business layer, if necessary, contacts the DAO layer, which queries the <em>[MySQL]</em> database in SQL, via ORM;</li>
+<li>4: The view builds the context (the M model) and instructs the template engine to generate the page (function <strong><em>[render]</em></strong>);</li>
+<li>5: The page HTML generated by the template is the view’s response, which <em>[Django]</em> returns to the browser after passing it back through the middleware.</li>
+</ul>
+<p><em>[Django]</em> is, along with <em>[Flask]</em>, one of the two major web frameworks in the <em>[Python]</em> world. Free and open-source, it was created in 2003 by Adrian Holovaty and Simon Willison at the Lawrence Journal-World, a newspaper in Kansas, and released in 2005. It is named after the jazz guitarist Django Reinhardt. It is now developed by a community under the auspices of the Django Software Foundation and runs wherever <em>[Python]</em> (<em>[Windows]</em>, <em>[Linux]</em>, <em>[macOS]</em>) runs. High-traffic websites use it (<em>[Instagram]</em>, <em>[Pinterest]</em>, <em>[Mozilla]</em>...). Its motto, “the web framework for perfectionists in a hurry,” clearly reflects its approach: whereas <em>[Flask]</em> provides only a core that is supplemented by extensions, <em>[Django]</em> comes “batteries included”: routing, templates, forms and validation, ORM, and database migrations, sessions, messages, translations, caching, protection against common attacks (CSRF, injection SQL, click hijacking), and even an automatically generated data administration interface. All of this forms a cohesive package, documented in one place, and designed to work together. Compared to <em>[Symfony]</em>, <em>[Django]</em> makes different choices: no service container or dependency injection, but <em>[Python]</em> modules that are imported; configuration written in <em>[Python]</em>, in a single file (<strong><em>[settings.py]</em></strong>), rather than in <em>[YAML]</em>; views that are simple functions. <em>[Django]</em> also follows a regular release schedule: one release approximately every eight months, and a “long-term support” release ” (LTS) every two years (5.2 in 2025, 6.2 in 2027), and deprecation notices that always precede the removal of a feature by two versions. <em>[Django]</em> can create servers that return JSON to a <em>[JavaScript]</em> client (<em>[Angular]</em>, <em>[React]</em>, <em>[Vue.js]</em>, <em>[Flutter]</em>...), often with the extension <em>[Django REST framework]</em>, unlike traditional web applications, where the server generates the HTML pages and the browser simply displays them. This document examines this second use case.</p>
+<p>One key difference with <em>[PHP]</em> explains a great deal about <em>[Django]</em>: the application is loaded once, when the server starts up, and then remains in memory to process all subsequent requests (Example 01). What is built at startup (the configuration, the routing table, the objects stored in module variables) is shared by all requests. This is the opposite of <em>[Symfony]</em>, which rebuilt the application with each request: we will return to this point frequently, particularly in the chapter on data scopes.</p>
+<h2 id="12-tools-used">1.2. <span style="color: #2e74b5">Tools Used</span></h2>
+<p>The examples were written and tested using the following tools (their installation is described in the appendix):</p>
+<ul>
+<li><em>[Python]</em> 3.13 (any version 3.12 or later is suitable: this is the minimum requirement for <em>[Django]</em> 6.1);</li>
+<li><em>[pip]</em>, the library manager for <em>[Python]</em>, and the <em>[venv]</em> module, which creates virtual environments (both included with <em>[Python]</em>);</li>
+<li>the <em>[Visual Studio Code]</em> editor, along with the Microsoft extensions <em>[Python]</em> and <em>[Pylance]</em> (code analysis, execution, debugging) and an extension for <em>[Django]</em> templates (syntax highlighting);</li>
+<li>a modern browser (<em>[Chrome]</em>, <em>[Firefox]</em>, <em>[Edge]</em>);</li>
+<li>the command-line tool <em>[curl]</em>, which displays raw HTTP responses (it is included with <em>[Windows]</em> 10 and 11);</li>
+<li>SGBD <em>[MySQL]</em> 8.4 or later (or <em>[MariaDB]</em> 10.11 or later), for example, the one from <em>[Laragon]</em> under <em>[Windows]</em>, starting with the chapter on data access, and for the case study.</li>
+</ul>
+<p><em>[Django]</em> and the other libraries are not part of <em>[Python]</em>: <em>[pip]</em> downloads them from the PyPI repository (Python Package Index) during installation (so you must be connected to the Internet on that day), and installs them in a virtual environment, a project-specific folder (see below). Each project describes its libraries in a <strong><em>[requirements.txt]</em></strong> file. The following table lists the main ones, along with the versions used:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Library</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Role</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Version</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>[Django]</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">The framework: development server, routing, views, middleware, templates, forms, sessions, messages, translations, cache, ORM; It installs the two libraries it needs: <i><b>[asgiref] </b></i>(the link between synchronous and asynchronous code) and <i><b>[sqlparse] </b></i>(formatting of displayed SQL orders)</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">6.1.1</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>[Babel]</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Formatting of numbers, amounts, and dates according to the language (example 16)</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2.18.0</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>[PyJWT]</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">JWT tokens (chapter on authentication)</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2.15.0</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>[mysqlclient]</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">The <i>[MySQL]</i> driver used by <i>[Django] </i>(Example 28 and Case Study)</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2.3.0</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i>[bcrypt]</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Password hashing (case study)</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">5.0.0</div></td></tr></table>
+
+<p><em>[Django]</em> is typically installed by <em>[pip]</em>, after which a project is created using the <strong><em>[django-admin startproject]</em></strong> command, which is installed by <em>[Django]</em> (see appendices):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>pip install django
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>django-admin startproject mon_projet
+</code></pre></div></td></tr></table></div>
+<p>This command creates a folder named <strong><em>[mon_projet]</em></strong> that contains a file named <strong><em>[manage.py]</em></strong> and a package named <strong><em>[mon_projet]</em></strong> consisting of five files (<strong><em>[settings.py]</em></strong>, <strong><em>[urls.py]</em></strong>, <strong><em>[wsgi.py]</em></strong>, <strong><em>[asgi.py]</em></strong>, <strong><em>[__init__.py]</em></strong>). Applications are then added using the <strong><em>[python manage.py startapp nom]</em></strong> command, which creates a folder containing seven files. This is how you start a real project. For learning purposes, this method has one drawback: the generated file <strong><em>[settings.py]</em></strong> already contains about a hundred lines of code, which activate about ten applications and seven middleware components—the purpose of which is not yet clear. The examples in this document therefore start from the other end: Example 01 is the smallest possible <em>[Django]</em> application, and each example adds only the files and settings it needs, written and commented on by hand. The case study at the end follows the structure of a standard <em>[Django]</em> application.</p>
+<h2 id="13-run-the-case-study">1.3. <span style="color: #2e74b5">Run the case study</span></h2>
+<h3 id="131-installing-laragon">1.3.1. <span style="color: #1f4d78">Installing Laragon</span></h3>
+<p>The case study requires the SGBD <em>[MySQL]</em>. Laragon can provide this and more. As of September 2026, Laragon is available at URL and [Download Laragon – Fast &amp; Modern Dev Environment]. Laragon includes tools that allow you to install a web server and the SGBD and <em>[MySQL]</em>:</p>
+<p><img src="images/10000000000006440000030C86481A8B.png" width="643" height="312" style="width:17cm;height:8.266cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006440000030C86481A8B.png" /></p>
+<ul>
+<li>in <strong><em>[1]</em></strong>, an Apache web server;</li>
+<li>into <strong><em>[2]</em></strong>, the SGBD <em>[MySQL]</em>;</li>
+<li>to <strong><em>[3]</em></strong>, a messaging tool that we will not be using;</li>
+<li><strong><em>[4]</em></strong> starts all services (Apache, <em>[MySQL]</em>, MailPit);</li>
+<li><strong><em>[5]</em></strong> displays the web page for URL and <strong><em>[http://localhost]</em></strong>. By default, this URL refers to the &lt;laragon-install&gt;\www folder, where &lt;laragon-install&gt; is the Laragon installation folder;</li>
+<li>in <strong><em>[6]</em></strong>, launches the HeidiSQL tool, which allows you to manage MySQL databases. We will use this tool to create the database used in the case study;</li>
+<li>In <strong><em>[7]</em></strong>, open a terminal where all the binaries needed for Laragon are located in PATH;</li>
+<li>in <strong><em>[8]</em></strong>, opens a Windows Explorer window in the folder associated with URL and <strong><em>[http://localhost]</em></strong>;</li>
+</ul>
+<p>The Laragon installation folder contains the following items:</p>
+<p><img src="images/10000000000002DB00000324CA05B23E.png" width="314" height="345" style="width:8.306cm;height:9.133cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002DB00000324CA05B23E.png" /></p>
+<p>In <strong><em>[1]</em></strong>, the <strong><em>[bin]</em></strong> folder contains numerous applications:</p>
+<p><img src="images/1000000000000329000004CE02139058.png" width="404" height="615" style="width:10.7cm;height:16.27cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000329000004CE02139058.png" /></p>
+<ul>
+<li>In <strong><em>[1]</em></strong>, the Apache web server;</li>
+<li>in <strong><em>[2]</em></strong>, a command-line terminal;</li>
+<li>in <strong><em>[3]</em></strong>, a <strong><em>[git]</em></strong> client that allows you to manage different versions of a project;</li>
+<li>in <strong><em>[4]</em></strong>, a database manager;</li>
+<li><strong><em>[5]</em></strong>, an email manager;</li>
+<li>in <strong><em>[6]</em></strong>, the SGBD and <em>[MySQL]</em>;</li>
+<li><strong><em>[7]</em></strong>, another web server;</li>
+<li>in <strong><em>[8]</em></strong>, <strong><em>[node.js]</em></strong> to run JavaScript scripts;</li>
+<li><strong><em>[9]</em></strong>, a text editor;</li>
+<li><strong><em>[10]</em></strong>, the PHP interpreter;</li>
+<li><strong><em>[11]</em></strong>, the <em>[Python]</em> interpreter;</li>
+<li><strong><em>[12]</em></strong>, a cache server;</li>
+</ul>
+<p>Laragon comes with a comprehensive development environment. In this course, we will use only SGBD, <em>[MySQL],</em> <strong><em>[6],</em></strong> and the <strong><em>[heidisql]</em></strong> tool to manage it graphically. Laragon’s <em>[Python]</em> <strong><em>[11]</em></strong> interpreter may not be recent enough for <em>[Django]</em> 6.1 (you need <em>version</em> 3.12 or later): Instead, we will install <em>[Python]</em> from its official website (see appendices), checking the box in the installer that adds <strong><em>[python]</em></strong> to the machine’s existing PATH.</p>
+<p>The README mentioned in the case study indicates that you must enter the following commands in a terminal window opened in the application’s folder:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python -m venv .venv
+</code></pre></div>
+<p>to create a virtual environment named <em>[Python]</em> and a folder named <strong><em>[.venv]</em></strong>, where the application libraries will be installed;</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>.venv\Scripts\activate
+</code></pre></div>
+<p>to activate this environment in the terminal (under <em>[Linux]</em> and <em>[macOS]</em>: <strong><em>[source .venv/bin/activate]</em></strong>). The terminal prompt then begins with <strong><em>[(.venv)]</em></strong>;</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="x">pip install -r requirements.txt</span>
+</code></pre></div>
+<p>to install the <em>[Python]</em> libraries required for the case study (<em>[Django]</em>, <em>[mysqlclient]</em>, <em>[PyJWT]</em>, <em>[bcrypt]</em>) ;</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python manage.py runserver 8081
+</code></pre></div>
+<p>to run the case study. If you use a <em>[PowerShell]</em> terminal in VSCode, <em>[PowerShell]</em> may refuse to run the activation script, displaying a message stating that “script execution is disabled on this system.” To enable this, for your user account only, enter the following once in a <em>[PowerShell]</em> terminal:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+</code></pre></div>
+<p>You will need to restart VSCode for this change to take effect. Alternatively, in VSCode, you can select a terminal named <em>[Command Prompt]</em> instead of <em>[PowerShell]</em>, where the script <strong><em>[activate]</em></strong> runs without this authorization.</p>
+<p>To create the <em>[MySQL]</em> database required for the case study, proceed as follows:</p>
+<p><img src="images/10000000000006440000030C352A3F89.png" width="503" height="244" style="width:13.301cm;height:6.468cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006440000030C352A3F89.png" /></p>
+<ul>
+<li>In <strong><em>[1]</em></strong>, all services must be started;</li>
+<li>in <strong><em>[2]</em></strong>, the <strong><em>[Database]</em></strong> option allows you to manage the database;</li>
+</ul>
+<p>The option <strong><em>[Database]</em></strong> launches a utility called HeidiSQL:</p>
+<p><img src="images/10000000000008D2000003C91FBD37B4.png" width="621" height="266" style="width:16.431cm;height:7.05cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000008D2000003C91FBD37B4.png" /></p>
+<ul>
+<li>In <strong><em>[1]</em></strong>, you can select various SGBD options. The default value provided is SGBD MySQL. This is acceptable;</li>
+<li>in <strong><em>[2]</em></strong>, you log in to HeidiSQL;</li>
+</ul>
+<p><img src="images/10000000000003FD0000018A35CBA47C.png" width="357" height="138" style="width:9.449cm;height:3.649cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003FD0000018A35CBA47C.png" /></p>
+<p><img src="images/10000000000002A4000001C70316A390.png" width="237" height="159" style="width:6.26cm;height:4.21cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002A4000001C70316A390.png" /></p>
+<ul>
+<li>In <strong><em>[1-2]</em></strong>, run the file SQL, then select the file <strong><em>[dbrdvmedecins2.sql],</em></strong> which you’ll find in the folder <strong><em>[django-sept-2026/rdvmedecins2-django/database]</em></strong>:</li>
+</ul>
+<p><img src="images/10000000000001D7000001F897B5F6F5.png" width="198" height="212" style="width:5.226cm;height:5.6cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D7000001F897B5F6F5.png" /></p>
+<p>Running the <strong><em>[3]</em></strong> file will create the <strong><em>[dbrdvmedecins2]</em></strong> database used by the case study. To view it, run F5 within HeidiSQL to refresh the display.</p>
+<p>Note: The following screenshots show a database named <strong><em>[dbrdvmedecins]</em></strong>, whereas the case study database is named <strong><em>[dbrdvmedecins2]</em></strong>. The two databases are virtually identical, so we determined it was unnecessary to take new screenshots.</p>
+<p><img src="images/10000000000002A50000031EFB250513.png" width="213" height="250" style="width:5.639cm;height:6.609cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002A50000031EFB250513.png" /></p>
+<p>The database <strong><em>[dbrdvmedecins]</em></strong> has been created. Here is its content:</p>
+<p><img src="images/100000000000053F00000271DC17B512.png" width="602" height="280" style="width:15.921cm;height:7.408cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000053F00000271DC17B512.png" /></p>
+<ul>
+<li>in <strong><em>[1-3]</em></strong>, the table <strong><em>[clients]</em></strong>;<ul>
+<li><strong><em>[id]</em></strong> is the primary key of the table;</li>
+<li><strong><em>[version]</em></strong> is the row’s version number. This number increments each time the row is modified;</li>
+<li><strong><em>[titre, nom, prenom]</em></strong> identifies the person;</li>
+</ul>
+</li>
+</ul>
+<p><img src="images/100000000000052A0000026BD3179386.png" width="602" height="282" style="width:15.921cm;height:7.454cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000052A0000026BD3179386.png" /></p>
+<ul>
+<li>in <strong><em>[1-3]</em></strong>, the table <strong><em>[medecins]</em></strong>;<ul>
+<li><strong><em>[id]</em></strong> is the primary key of the table;</li>
+<li><strong><em>[version]</em></strong> is the version number of the row;</li>
+<li><strong><em>[titre, nom, prenom]</em></strong> identifies the person;</li>
+</ul>
+</li>
+</ul>
+<p><img src="images/10000000000005FE000002C6FB6943F4.png" width="602" height="278" style="width:15.921cm;height:7.368cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005FE000002C6FB6943F4.png" /></p>
+<ul>
+<li>In <strong><em>[1-3]</em></strong>, the table of doctors’ appointment time slots:<ul>
+<li><strong><em>[id]</em></strong>: primary key;</li>
+<li><strong><em>[version]</em></strong>: row version number;</li>
+<li><strong><em>[id_medecin]</em></strong>: foreign key referencing the doctor’s primary key;</li>
+<li><strong><em>[hdebut, mdebut]</em></strong>: hour and minutes of the appointment start time. Thus, <strong><em>[8,20]</em></strong> means 8:20 a.m.</li>
+<li><strong><em>[hfin, mfin]</em></strong>: hour and minutes of the end of the consultation.</li>
+</ul>
+</li>
+</ul>
+<p><img src="images/10000000000005EB0000024E23D6EF19.png" width="602" height="234" style="width:15.921cm;height:6.198cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005EB0000024E23D6EF19.png" /></p>
+<ul>
+<li>In <strong><em>[1-3]</em></strong>, the <strong><em>[rv]</em></strong> table of scheduled appointments;<ul>
+<li><strong><em>[id]</em></strong>: primary key;</li>
+<li><strong><em>[version]</em></strong>: version number;</li>
+<li><strong><em>[jour]</em></strong>: appointment date;</li>
+<li><strong><em>[id_creneau]</em></strong>: foreign key referencing the primary key of the appointment time slot. Since a time slot is linked to a doctor, we know which doctor is handling this appointment;</li>
+<li><strong><em>[id_client]</em></strong>: foreign key to the number (primary key) of the customer making the inquiry;</li>
+</ul>
+</li>
+</ul>
+<p><img src="images/100000000000066300000266A61EA136.png" width="602" height="226" style="width:15.921cm;height:5.978cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000066300000266A61EA136.png" /></p>
+<ul>
+<li>in <strong><em>[1-3]</em></strong>, the table <strong><em>[users],</em></strong> which lists the users authorized to use the application;<ul>
+<li><strong><em>[id, version]</em></strong>: primary key, version number;</li>
+<li><strong><em>[login, password]</em></strong>: user credentials;</li>
+<li><strong><em>[nom]</em></strong>: user name;</li>
+<li><strong><em>[role]</em></strong>: the user’s role. <strong><em>[ADMIN]</em></strong> has full access; <strong><em>[MEDECIN]</em></strong> views their own calendar; <strong><em>[PATIENT]</em></strong> (a client of the firm) schedules and cancels their own appointments;</li>
+</ul>
+</li>
+</ul>
+<h3 id="132-performing-the-case-study">1.3.2. <span style="color: #1f4d78">Performing the Case Study</span></h3>
+<p><strong>Reviewer’s note</strong>: I advise the reader to carry out the case study immediately as described below. Once you fully understand the role of this appointment application, ask your favorite IA to modify the application as follows: from now on, each doctor will be able to:</p>
+<ul>
+<li>set their own consultation slots between two dates. This will allow them to adjust their schedule as needed;</li>
+<li>remove certain time slots from the calendar for a given day—for example, if they are unavailable for personal reasons;</li>
+</ul>
+<p>The modification is not straightforward because it involves a change to the database structure. Ask IA to provide you with the new application code and the SQL script to create the new database. To do this, you’ll need to provide them with the ZIP file containing the complete project as well as the SQL script for the old database.</p>
+<p>Also, I haven’t reviewed the course created by <strong>Claude</strong>. He had already produced the courses [NestJS], [ASP.NET Core MVC], [Spring MVC], and [Flask], all of which were perfect. I assumed the same was true for this one. If you run into a problem understanding something, the solution is always the same: ask your favorite IA to explain what you don’t understand. <strong>Claude</strong>, for example, is very good at this. You may need to “upload” the example you don’t understand to him.</p>
+<p><strong>End of note</strong>.</p>
+<p>The case study at the end of this document is a complete application. Readers will likely want to see it in action before delving into the details of the framework: here’s how to run it. It’s located in the <strong><em>[rdvmedecins2-django]</em></strong> folder, next to the <strong><em>[exemples]</em></strong> folder:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>django-sept-2026/
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>├── exemples/
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>└── rdvmedecins2-django/
+</code></pre></div></td></tr></table></div>
+<p>You must have installed <em>[Python]</em> (version 3.12 or later), <em>[Visual Studio Code],</em> and <em>[MySQL]</em> (see appendices). Then:</p>
+<ul>
+<li>Create the <strong><em>[dbrdvmedecins2]</em></strong> database by running the <strong><em>[rdvmedecins2-django/database/dbrdvmedecins2.sql]</em></strong> script. Using <em>[Laragon]</em>, open the <em>[HeidiSQL]</em> tool (Database button), then run the script via the File / Run SQL menu (see above). At the command line, from the <strong><em>[rdvmedecins2-django]</em></strong> folder:</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>mysql -u root &lt; database/dbrdvmedecins2.sql
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Open the <strong><em>[rdvmedecins2-django]</em></strong> folder in <em>[Visual Studio Code]</em> (File menu / Open Folder), then open a terminal (Terminal menu / New Terminal);</li>
+<li>create the application’s virtual environment, activate it, and then install its libraries: <em>[pip]</em> reads the file <strong><em>[requirements.txt]</em></strong>, downloads <em>[Django]</em> and the other libraries, and places them in the application’s <strong><em>[.venv]</em></strong> folder (takes a few tens of seconds). Under <em>[Windows]</em>:</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="x">python -m venv .venv</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="x">.venv\Scripts\activate</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="x">pip install -r requirements.txt</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Under <em>[Linux]</em> and <em>[macOS]</em>, the second command is <strong><em>[source .venv/bin/activate]</em></strong>. <em>[Visual Studio Code]</em> displays a window asking if you want to use this environment for the folder: accept; any terminals opened afterward will activate it automatically;</li>
+<li>verify the connection to the database. The application connects to <em>[MySQL]</em> on <strong><em>[127.0.0.1]</em></strong>, port 3306, using the user <strong><em>[root]</em></strong> without a password (the default settings for <em>[Laragon]</em>). If your <strong><em>[root]</em></strong> account has a password, enter it in the application’s <strong><em>[.env]</em></strong> file, on the <strong><em>[DB_PASSWORD=]</em></strong> line;</li>
+<li>run the application:</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>python manage.py runserver 8081
+</code></pre></div></td></tr></table></div>
+<ul>
+<li><em>[Django]</em> displays:</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span>
+<span class="normal"><a href="#__codelineno-10-7">7</a></span>
+<span class="normal"><a href="#__codelineno-10-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="n">Watching</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="n">changes</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">StatReloader</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="n">Performing</span><span class="w"> </span><span class="n">system</span><span class="w"> </span><span class="n">checks</span><span class="p">...</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="n">System</span><span class="w"> </span><span class="n">check</span><span class="w"> </span><span class="n">identified</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="nf">issues</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="n">silenced</span><span class="p">).</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="n">September</span><span class="w"> </span><span class="mi">27</span><span class="p">,</span><span class="w"> </span><span class="mi">2026</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">19</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mi">12</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="n">Django</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="mf">6.1.1</span><span class="p">,</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="nn">settings</span><span class="w"> </span><span class="err">'</span><span class="n">config</span><span class="p">.</span><span class="n">settings</span><span class="err">'</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="n">Starting</span><span class="w"> </span><span class="n">development</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="c1">//127.0.0.1:8081/</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="n">Quit</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">CTRL</span><span class="o">-</span><span class="n">BREAK</span><span class="p">.</span>
+</code></pre></div></td></tr></table></div>
+<p>The development server is listening on port 8081 of the machine (<strong><em>[127.0.0.1]</em></strong>, i.e., <strong><em>[localhost]</em></strong>). Each request received will be logged in the console, along with the SQL commands sent to the database;</p>
+<ul>
+<li>Open the URL <strong><em>[http://localhost:8081]</em></strong> in a browser:</li>
+</ul>
+<p><img src="images/10000000000003EC000003B47904FD83.png" width="605" height="571" style="width:16cm;height:15.108cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003EC000003B47904FD83.png" /></p>
+<ul>
+<li>Log in with one of the demo accounts, whose password is the same as the username: <strong><em>[admin]</em></strong> (administrator), <strong><em>[pelissier]</em></strong>, <strong><em>[tatou]</em></strong>, <strong><em>[dupont]</em></strong> (doctors), <strong><em>[martin]</em></strong>, <strong><em>[durand]</em></strong>, <strong><em>[bistrou]</em></strong>, <strong><em>[german]</em></strong> (patients). You must also enter the characters from the image, in uppercase or lowercase.</li>
+</ul>
+<p>Upon startup, the command <strong><em>[runserver]</em></strong> verifies the project and, along with <em>[MySQL]</em>, connects to the database for this purpose: if the database is inaccessible, the server does not start, and the console displays the error at the end of a long call stack. If the message is <strong><em>[(2002, &quot;Can&#x27;t connect to server on &#x27;127.0.0.1&#x27; (10061)&quot;)]</em></strong>, it means that <em>[MySQL]</em> has not started; with <strong><em>[(1045, &quot;Access denied for user &#x27;root&#x27;@&#x27;localhost&#x27; (using password: NO)&quot;)]</em></strong>, it means the password is incorrect; with <strong><em>[(1049, &quot;Unknown database &#x27;dbrdvmedecins2&#x27;&quot;)]</em></strong>, it means the script SQL was not executed. If the <strong><em>[python manage.py runserver]</em></strong> command fails with the message <strong><em>[ModuleNotFoundError: No module named &#x27;django&#x27;]</em></strong>, it means the virtual environment is not enabled (or that <strong><em>[pip install]</em></strong> has not been executed); if the error message is <strong><em>[Error: That port is already in use.]</em></strong>, it means that port 8081 is already in use (by another version of the application, for example). The application’s <strong><em>[README.md]</em></strong> file describes other scenarios. Stop the application using <strong><em>[Ctrl-C]</em></strong> in the terminal (<strong><em>[Ctrl-Pause]</em></strong> under <em>[Windows]</em>, as stated in the message from <em>[Django]</em>, but <strong><em>[Ctrl-C]</em></strong> also works).</p>
+<p>Once the reader fully understands the purpose of this appointment application, they can ask their favorite IA to modify it as follows: from now on, each doctor will be able to:</p>
+<ul>
+<li>set their own appointment slots between two dates. This will allow them to adjust their schedule as needed;</li>
+<li>remove certain time slots from the calendar for a given day—for example, if they are unavailable for personal reasons.</li>
+</ul>
+<p>The modification is not straightforward because it involves a change to the database structure. You must request the new application code and the SQL script—which creates the new database—from the IA, providing them with the ZIP file containing the complete project as well as the SQL script for the old database. Similarly, if you encounter a point in this document that you don’t understand, the solution is always the same: ask your favorite IA to explain what you don’t understand, providing the relevant example if necessary.</p>
+<p>The case study at the end of the document demonstrates how to use the application and then explains each of its files.</p>
+<h2 id="14-examples">1.4. <span style="color: #2e74b5">Examples</span></h2>
+<p>The examples are stored in the <strong><em>[exemples]</em></strong> folder, with one subfolder per example:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="x">exemples/</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="x">├── 01-structure/</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="x">├── 02-routage/</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="x">├── ...</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="x">├── 28-couches/</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="x">├── commun/</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="x">│   ├── static/</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="x">│   │   └── bootstrap/</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="x">│   └── README.md</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="x">└── requirements.txt</span>
+</code></pre></div></td></tr></table></div>
+<p>Each example is a small application (<em>[Django]</em>) that runs on its own. All examples use the same libraries, described in the file <strong><em>[exemples/requirements.txt]</em></strong>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span>
+<span class="normal"><a href="#__codelineno-12-4">4</a></span>
+<span class="normal"><a href="#__codelineno-12-5">5</a></span>
+<span class="normal"><a href="#__codelineno-12-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="x"># the example libraries, installed once and for all in the</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="x"># virtual environment in the examples folder: pip install -r requirements.txt</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="x">Django==6.1.1</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="x">mysqlclient==2.3.0</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="x">PyJWT==2.15.0</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="x">Babel==2.18.0</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>lines 1–2: comments; in <em>[Python]</em>, as in this file, a comment extends from <strong><em>[#]</em></strong> to the end of the line;</li>
+<li>Lines 3–6: the libraries, one per line, with their exact versions: <em>[Django]</em> itself, <em>[mysqlclient]</em> (access to <em>[MySQL]</em>, Example 28), <em>[PyJWT]</em> (the JWT tokens, example 25), and <em>[Babel]</em> (language-specific formatting of numbers and dates, example 16). The <strong><em>[==]</em></strong> operator enforces the version; <strong><em>[&gt;=6.1,&lt;6.2]</em></strong> would accept all 6.1.x versions. The two libraries required by <em>[Django]</em> (<strong><em>[asgiref]</em></strong>, <strong><em>[sqlparse]</em></strong>) are not listed: <em>[pip]</em> installs them automatically, since <em>[Django]</em> declares them.</li>
+</ul>
+<p><em>[Python]</em> recognizes only one library folder per interpreter. To ensure that each project has its own libraries in the appropriate versions, a virtual environment is created: a folder containing a lightweight copy of the interpreter and its own library folder (<strong><em>[Lib/site-packages]</em></strong> under <em>[Windows]</em>, <strong><em>[lib/python3.13/site-</em></strong><strong><em>packages]</em></strong> elsewhere). To run the examples, create a virtual environment and install their libraries there once and for all in a terminal opened to the <strong><em>[exemples]</em></strong> folder:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="x">python -m venv .venv</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="x">.venv\Scripts\activate</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="x">pip install -r requirements.txt</span>
+</code></pre></div></td></tr></table></div>
+<p><strong><em>[python -m venv .venv]</em></strong> executes the <em>[venv]</em> module from <em>[Python]</em>, which creates the environment in the <strong><em>[.venv]</em></strong> folder. The script <strong><em>[activate]</em></strong> (under <em>[Linux]</em> and <em>[macOS]</em>: <strong><em>[source .venv/bin/activate]</em></strong>) modifies the terminal’s PATH: the commands <strong><em>[python]</em></strong> and <em>[pip]</em> then refer to those in the environment, and the prompt begins with <strong><em>[(.venv)]</em></strong>. <strong><em>[pip install -r requirements.txt]</em></strong> installs the file’s libraries. The <strong><em>[exemples/.venv]</em></strong> environment is shared by all 28 examples: it is activated in each terminal where you want to run one. The command <strong><em>[pip list]</em></strong> displays the installed libraries, and <strong><em>[deactivate]</em></strong> deactivates the environment. The <strong><em>[commun]</em></strong> folder contains the CSS <em>[Bootstrap]</em> (<strong><em>[commun/static/bootstrap]</em></strong>) framework, shared by the examples that format their pages (starting with Example 15).</p>
+<p>Almost all of the examples have the same structure—that of a standard <em>[Django]</em> project, stripped down to the essentials. For example, the structure of Example 13:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span>
+<span class="normal"><a href="#__codelineno-14-13">13</a></span>
+<span class="normal"><a href="#__codelineno-14-14">14</a></span>
+<span class="normal"><a href="#__codelineno-14-15">15</a></span>
+<span class="normal"><a href="#__codelineno-14-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>13-premiere-vue/
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a>├── config/
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a>│   ├── <span class="gs">__init__</span>.py
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a>│   ├── settings.py
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a>│   ├── urls.py
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a>│   └── wsgi.py
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a>├── pages/
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a>│   ├── <span class="gs">__init__</span>.py
+<a id="__codelineno-14-9" name="__codelineno-14-9"></a>│   ├── modeles.py
+<a id="__codelineno-14-10" name="__codelineno-14-10"></a>│   ├── urls.py
+<a id="__codelineno-14-11" name="__codelineno-14-11"></a>│   └── views.py
+<a id="__codelineno-14-12" name="__codelineno-14-12"></a>├── templates/
+<a id="__codelineno-14-13" name="__codelineno-14-13"></a>│   └── pages/
+<a id="__codelineno-14-14" name="__codelineno-14-14"></a>│       ├── inconnu.html
+<a id="__codelineno-14-15" name="__codelineno-14-15"></a>│       └── index.html
+<a id="__codelineno-14-16" name="__codelineno-14-16"></a>└── manage.py
+</code></pre></div></td></tr></table></div>
+<ul>
+<li><strong><em>[manage.py]</em></strong>: the project’s command-line tool, which specifically launches the development server (Example 01);</li>
+<li><strong><em>[config]</em></strong>: the project’s configuration package: its settings (<strong><em>[settings.py]</em></strong>), its routes (<strong><em>[urls.py]</em></strong>, Example 02), and its entry point for a web server (<strong><em>[wsgi.py]</em></strong>). A project created by <strong><em>[django-admin startproject]</em></strong> gives this package the project’s name; we refer to it as <strong><em>[config]</em></strong> in all examples to clarify its role;</li>
+<li><strong><em>[pages]</em></strong>: an application <em>[Django]</em>: a package <em>[Python]</em> that groups together views (<strong><em>[views.py]</em></strong>), their routes (<strong><em>[urls.py]</em></strong>), and the classes they require. A project is a collection of applications, which the <strong><em>[INSTALLED_APPS]</em></strong> setting lists (example 02);</li>
+<li><strong><em>[templates]</em></strong>: the templates (from the chapter on templates).</li>
+</ul>
+<p>To run an example, open a terminal in its folder (in <em>[Visual Studio Code]</em>: right-click the example folder, then select &quot;Open in the built-in terminal&quot;), activate the virtual environment for the examples (<strong><em>[..\.venv\Scripts\activate]</em></strong> under <em>[Windows]</em>, <strong><em>[source ../.venv/bin/activate]</em></strong> elsewhere), and type:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>python manage.py runserver
+</code></pre></div></td></tr></table></div>
+<p>All examples listen on port 8000: you can only run one at a time (or you must change the port: <strong><em>[python manage.py runserver 8001]</em></strong>). Stop the server using <strong><em>[Ctrl-C]</em></strong> in the terminal. You don’t need to restart the server after modifying a <em>[Python]</em> file or a template: the development server monitors the project files and restarts automatically when any of them change (example 01).</p>
+<p>When you open the <strong><em>[exemples]</em></strong> folder in <em>[Visual Studio Code]</em>, you must specify the virtual environment’s interpreter for the <em>[Python]</em> extension (Python command: Select Interpreter from the command palette, <strong><em>[Ctrl-Maj-P]</em></strong>, then <strong><em>[.venv\Scripts\python.exe]</em></strong>): The <em>[Pylance]</em> extension then analyzes all files using the environment’s libraries, including <em>[Django]</em>: In each file, you can take advantage of code completion, navigation to the definition of a class or function (<strong><em>[F12]</em></strong> key), and error reporting. Since all examples include a <strong><em>[config]</em></strong> package, the analysis may confuse the packages of two examples; this has no impact on execution, since each example is run separately from its own folder. To avoid this confusion, simply open the example’s folder directly.</p>
+<h2 id="15-document-contents">1.5. <span style="color: #2e74b5">Document Contents</span></h2>
+<p>The document is organized as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Chapter</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Topic</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Examples</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Views, routing, responses</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">From the request to the view: routes, applications, responses, redirects, shared services</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">01 to 06</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">The view template</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Request parameters: reading, conversion, validation via the <i>[Django]</i> forms, POST requests</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">07 to 12</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Templates and forms</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">the <i>[Django]</i> template language, page templates, fragments, custom tags and filters, forms, validation, PRG, anti-CSRF protection</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">13 to 21</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Internationalization</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">An application in French and English</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">22</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Data Scopes</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">query, session, cache, cookies</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">23</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">The lifecycle of a request</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">signals, middleware, route converters, error handling</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">24</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Authentication and Authorization</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">token JWT in a cookie, authentication middleware, decorators, roles, CAPTCHA, attempt limits</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">25–27</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Layered architecture and data access</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Web / Business Logic / DAO with ORM from <i>[Django] </i>and <i>[MySQL]</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">28</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Case Study</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">The RdvMedecins application, explained file by file</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">-</div></td></tr></table>
+
+<p>Each example introduces only a few new concepts, and the chapters build on one another: it is best to read them in order. The case study, on the other hand, draws on all the concepts from the previous chapters: whenever relevant, its commentary refers to the example where the concept was introduced. The appendices describe the installation of the tools: <em>[Python]</em>, <em>[pip],</em> and the virtual environments, <em>[Visual Studio Code]</em> and its extensions, <em>[MySQL]</em> along with <em>[Laragon]</em>, <em>[curl]</em>, and the <em>[django-admin]</em> tool.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        This tutorial, written by Anthropic’s AI <strong>Claude</strong> at the request of <strong>Serge Tahé</strong>, is made available to the public under the terms of the
+        <em>Creative Commons Attribution – No Commercial Use –
+        ShareAlike 3.0 Unported</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
