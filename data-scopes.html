@@ -523,10 +523,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#612-the-objects-scorescompteurspy-and-scoresmiddlewarepy" class="md-nav__link">
+  <a href="#612-the-objects-scopescounterspy-and-scopesmiddlewarepy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.1.2. The objects: scores/compteurs.py and scores/middleware.py
+        6.1.2. The objects: scopes/counters.py and scopes/middleware.py
       
     </span>
   </a>
@@ -556,10 +556,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#615-the-template-templatesporteesporteeshtml" class="md-nav__link">
+  <a href="#615-the-template-templatesscopesscopeshtml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.1.5. The template: templates/portees/portees.html
+        6.1.5. The template: templates/scopes/scopes.html
       
     </span>
   </a>
@@ -824,18 +824,18 @@
 <span class="normal"><a href="#__codelineno-0-12">12</a></span>
 <span class="normal"><a href="#__codelineno-0-13">13</a></span>
 <span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>23-portees/
+<span class="normal"><a href="#__codelineno-0-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>23-scopes/
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a>├── config/
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a>│   ├── settings.py
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a>│   └── ...
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>├── portees/
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>├── scopes/
 <a id="__codelineno-0-6" name="__codelineno-0-6"></a>│   ├── __init__.py
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>│   ├── compteurs.py
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>│   ├── counters.py
 <a id="__codelineno-0-8" name="__codelineno-0-8"></a>│   ├── middleware.py
 <a id="__codelineno-0-9" name="__codelineno-0-9"></a>│   └── views.py
 <a id="__codelineno-0-10" name="__codelineno-0-10"></a>├── templates/
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>│   └── portees/
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>│       └── portees.html
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>│   └── scopes/
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>│       └── scopes.html
 <a id="__codelineno-0-13" name="__codelineno-0-13"></a>├── var/
 <a id="__codelineno-0-14" name="__codelineno-0-14"></a>│   └── sessions/
 <a id="__codelineno-0-15" name="__codelineno-0-15"></a>└── manage.py
@@ -891,7 +891,7 @@
 <span class="normal"><a href="#__codelineno-1-48">48</a></span>
 <span class="normal"><a href="#__codelineno-1-49">49</a></span>
 <span class="normal"><a href="#__codelineno-1-50">50</a></span>
-<span class="normal"><a href="#__codelineno-1-51">51</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># config/settings.py: the configuration for Example 23</span>
+<span class="normal"><a href="#__codelineno-1-51">51</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># config/settings.py: the configuration of example 23</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4"></a>
@@ -899,28 +899,28 @@
 <a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">DEBUG</span> <span class="o">=</span> <span class="kc">True</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="s2">"django-insecure-1zxb1%#mksmtg+m&amp;rsp_e6&amp;i7@6sbtm_i=lqjq_+rg#-=i5r-p"</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="n">LANGUAGE_CODE</span> <span class="o">=</span> <span class="s2">"fr"</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="n">LANGUAGE_CODE</span> <span class="o">=</span> <span class="s2">"en"</span>
 <a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="n">TIME_ZONE</span> <span class="o">=</span> <span class="s2">"Europe/Paris"</span>
 <a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="n">ROOT_URLCONF</span> <span class="o">=</span> <span class="s2">"config.urls"</span>
 <a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="n">WSGI_APPLICATION</span> <span class="o">=</span> <span class="s2">"config.wsgi.application"</span>
 <a id="__codelineno-1-13" name="__codelineno-1-13"></a>
 <a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
 <a id="__codelineno-1-15" name="__codelineno-1-15"></a>    <span class="s2">"django.contrib.staticfiles"</span><span class="p">,</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a>     <span class="c1"># the SESSIONS</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a>    <span class="c1"># the SESSIONS</span>
 <a id="__codelineno-1-17" name="__codelineno-1-17"></a>    <span class="s2">"django.contrib.sessions"</span><span class="p">,</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18"></a>    <span class="s2">"portees"</span><span class="p">,</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a>    <span class="s2">"scopes"</span><span class="p">,</span>
 <a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="p">]</span>
 <a id="__codelineno-1-20" name="__codelineno-1-20"></a>
 <a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="n">MIDDLEWARE</span> <span class="o">=</span> <span class="p">[</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22"></a>     <span class="c1"># the session middleware: it retrieves the browser’s session (using the</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23"></a>     <span class="c1"># session ID cookie) at the beginning of the request and saves it at the end of the request</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22"></a>    <span class="c1"># the sessions middleware: it finds the browser's session (thanks to the</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23"></a>    <span class="c1"># sessionid cookie) at the start of the request, and saves it at the end of the request</span>
 <a id="__codelineno-1-24" name="__codelineno-1-24"></a>    <span class="s2">"django.contrib.sessions.middleware.SessionMiddleware"</span><span class="p">,</span>
-<a id="__codelineno-1-25" name="__codelineno-1-25"></a>     <span class="c1"># the REQUÊTE scope: one object per request (see scopes/middleware.py)</span>
-<a id="__codelineno-1-26" name="__codelineno-1-26"></a>    <span class="s2">"portees.middleware.InfosRequete"</span><span class="p">,</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25"></a>    <span class="c1"># the REQUEST scope: one object per request (see scopes/middleware.py)</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26"></a>    <span class="s2">"scopes.middleware.RequestInfoMiddleware"</span><span class="p">,</span>
 <a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="p">]</span>
 <a id="__codelineno-1-28" name="__codelineno-1-28"></a>
-<a id="__codelineno-1-29" name="__codelineno-1-29"></a><span class="c1"># session data is stored on the server in FICHIERS files (one per</span>
-<a id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="c1"># session), in the var/sessions folder in the example, which is created if it does not exist</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29"></a><span class="c1"># the session data are stored on the server, in FILES (one per</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="c1"># session), in the example's var/sessions folder, created if it does not exist</span>
 <a id="__codelineno-1-31" name="__codelineno-1-31"></a><span class="n">SESSION_ENGINE</span> <span class="o">=</span> <span class="s2">"django.contrib.sessions.backends.file"</span>
 <a id="__codelineno-1-32" name="__codelineno-1-32"></a><span class="n">SESSION_FILE_PATH</span> <span class="o">=</span> <span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s2">"var"</span> <span class="o">/</span> <span class="s2">"sessions"</span>
 <a id="__codelineno-1-33" name="__codelineno-1-33"></a><span class="n">SESSION_FILE_PATH</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -931,7 +931,7 @@
 <a id="__codelineno-1-38" name="__codelineno-1-38"></a>        <span class="s2">"DIRS"</span><span class="p">:</span> <span class="p">[</span><span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s2">"templates"</span><span class="p">],</span>
 <a id="__codelineno-1-39" name="__codelineno-1-39"></a>        <span class="s2">"OPTIONS"</span><span class="p">:</span> <span class="p">{</span>
 <a id="__codelineno-1-40" name="__codelineno-1-40"></a>            <span class="s2">"context_processors"</span><span class="p">:</span> <span class="p">[</span>
-<a id="__codelineno-1-41" name="__codelineno-1-41"></a>                 <span class="c1"># the `request` variable, and therefore request.session and request.infos</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41"></a>                <span class="c1"># the request variable, and therefore request.session and request.info</span>
 <a id="__codelineno-1-42" name="__codelineno-1-42"></a>                <span class="s2">"django.template.context_processors.request"</span><span class="p">,</span>
 <a id="__codelineno-1-43" name="__codelineno-1-43"></a>            <span class="p">],</span>
 <a id="__codelineno-1-44" name="__codelineno-1-44"></a>        <span class="p">},</span>
@@ -940,16 +940,16 @@
 <a id="__codelineno-1-47" name="__codelineno-1-47"></a>
 <a id="__codelineno-1-48" name="__codelineno-1-48"></a><span class="n">STATIC_URL</span> <span class="o">=</span> <span class="s2">"static/"</span>
 <a id="__codelineno-1-49" name="__codelineno-1-49"></a><span class="n">STATICFILES_DIRS</span> <span class="o">=</span> <span class="p">[</span>
-<a id="__codelineno-1-50" name="__codelineno-1-50"></a>    <span class="n">BASE_DIR</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">"commun"</span> <span class="o">/</span> <span class="s2">"static"</span><span class="p">,</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50"></a>    <span class="n">BASE_DIR</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">"common"</span> <span class="o">/</span> <span class="s2">"static"</span><span class="p">,</span>
 <a id="__codelineno-1-51" name="__codelineno-1-51"></a><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
 <ul>
 <li>Line 17: session handling;</li>
 <li>lines 21–27: two middleware components. <strong><em>[SessionMiddleware]</em></strong> retrieves the browser session at the start of the request using the <strong><em>[sessionid]</em></strong> cookie and stores it in <strong><em>[request.session]</em></strong>; at the end of the request, it saves the session if it has been modified and sends the cookie. It only actually reads the data upon the first access to <strong><em>[request.session]</em></strong>: a view that doesn’t use it incurs no cost. The second middleware is ours (see below);</li>
 <li>lines 31–33: session data is stored in files—one per session—in the <strong><em>[var/sessions]</em></strong> folder in the example, which we can examine. Line 33 creates this folder if it does not exist (<strong><em>[parents=True]</em></strong>: including parent folders; <strong><em>[exist_ok=True]</em></strong>: no error if it already exists): the settings file is <em>[Python]</em>, which can execute code. The default option, the database, would require a database (next chapter);</li>
-<li>line 42: the context processor <strong><em>[request]</em></strong>: the templates will use <strong><em>[request.session]</em></strong> and <strong><em>[request.infos]</em></strong>.</li>
+<li>line 42: the context processor <strong><em>[request]</em></strong>: the templates will use <strong><em>[request.session]</em></strong> and <strong><em>[request.info]</em></strong>.</li>
 </ul>
-<h3 id="612-the-objects-scorescompteurspy-and-scoresmiddlewarepy">6.1.2. <span style="color: #1f4d78">The objects: scores/compteurs.py and scores/middleware.py</span></h3>
+<h3 id="612-the-objects-scopescounterspy-and-scopesmiddlewarepy">6.1.2. <span style="color: #1f4d78">The objects: scopes/counters.py and scopes/middleware.py</span></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
@@ -967,24 +967,24 @@
 <span class="normal"><a href="#__codelineno-2-15">15</a></span>
 <span class="normal"><a href="#__codelineno-2-16">16</a></span>
 <span class="normal"><a href="#__codelineno-2-17">17</a></span>
-<span class="normal"><a href="#__codelineno-2-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># scopes/compteurs.py: scope APPLICATION, counters shared by all</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="c1"># requests from all users</span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># scopes/counters.py: APPLICATION scope, counters shared by all the</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="c1"># requests of all the users</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3"></a>
 <a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="c1"># a Counter: a dictionary {key: number}, where missing keys are set to 0. It is</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="c1"># created when the module loads, and lives as long as the server process</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="n">_compteurs</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="n">_verrou</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="c1"># a Counter: a dictionary {key: number}, whose absent keys are worth 0. It is</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="c1"># created when the module is loaded, and lives as long as the server process</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="n">_counters</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="n">_lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
 <a id="__codelineno-2-11" name="__codelineno-2-11"></a>
 <a id="__codelineno-2-12" name="__codelineno-2-12"></a>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="c1"># an additional number under the key [cle]; += is not an atomic operation: two</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="c1"># concurrent requests could read the same value. The lock prevents this</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="k">def</span><span class="w"> </span><span class="nf">suivant</span><span class="p">(</span><span class="n">cle</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a>    <span class="k">with</span> <span class="n">_verrou</span><span class="p">:</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a>        <span class="n">_compteurs</span><span class="p">[</span><span class="n">cle</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a>        <span class="k">return</span> <span class="n">_compteurs</span><span class="p">[</span><span class="n">cle</span><span class="p">]</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="c1"># one more number under the [key] key; += is not an atomic operation: two</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="c1"># simultaneous requests could read the same value. The lock prevents it</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="k">def</span><span class="w"> </span><span class="nf">next_value</span><span class="p">(</span><span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>    <span class="k">with</span> <span class="n">_lock</span><span class="p">:</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>        <span class="n">_counters</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a>        <span class="k">return</span> <span class="n">_counters</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
 <ul>
 <li>Line 5: the class <strong><em>[Counter]</em></strong> from the module <strong><em>[collections]</em></strong>: a dictionary whose values are numbers, and whose missing keys are set to 0;</li>
@@ -1018,42 +1018,42 @@
 <span class="normal"><a href="#__codelineno-3-25">25</a></span>
 <span class="normal"><a href="#__codelineno-3-26">26</a></span>
 <span class="normal"><a href="#__codelineno-3-27">27</a></span>
-<span class="normal"><a href="#__codelineno-3-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># scopes/middleware.py: scope REQUÊTE, information from a request</span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># scopes/middleware.py: REQUEST scope, the information of a request</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4"></a>
 <a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">django.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">timezone</span>
 <a id="__codelineno-3-6" name="__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">compteurs</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">counters</span>
 <a id="__codelineno-3-8" name="__codelineno-3-8"></a>
 <a id="__codelineno-3-9" name="__codelineno-3-9"></a>
 <a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="k">class</span><span class="w"> </span><span class="nc">RequeteInfos</span><span class="p">:</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a>    <span class="n">numero</span><span class="p">:</span> <span class="nb">int</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a>    <span class="n">debut</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="k">class</span><span class="w"> </span><span class="nc">RequestInfo</span><span class="p">:</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>    <span class="n">number</span><span class="p">:</span> <span class="nb">int</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a>    <span class="n">start</span><span class="p">:</span> <span class="nb">str</span>
 <a id="__codelineno-3-14" name="__codelineno-3-14"></a>
 <a id="__codelineno-3-15" name="__codelineno-3-15"></a>
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="c1"># the middleware creates UN object RequeteInfos per request, and stores it in the request:</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="c1"># The view and template retrieve it via request.infos. It disappears along with the view and template</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="k">class</span><span class="w"> </span><span class="nc">InfosRequete</span><span class="p">:</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="c1"># the middleware creates ONE RequestInfo object per request, and stores it in the request:</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="c1"># the view and the template find it through request.info. It disappears with it</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="k">class</span><span class="w"> </span><span class="nc">RequestInfoMiddleware</span><span class="p">:</span>
 <a id="__codelineno-3-19" name="__codelineno-3-19"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">get_response</span><span class="p">):</span>
 <a id="__codelineno-3-20" name="__codelineno-3-20"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">get_response</span> <span class="o">=</span> <span class="n">get_response</span>
 <a id="__codelineno-3-21" name="__codelineno-3-21"></a>
 <a id="__codelineno-3-22" name="__codelineno-3-22"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
-<a id="__codelineno-3-23" name="__codelineno-3-23"></a>        <span class="n">request</span><span class="o">.</span><span class="n">infos</span> <span class="o">=</span> <span class="n">RequeteInfos</span><span class="p">(</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24"></a>             <span class="c1"># a number created via OBJET, drawn from a counter shared by all requests</span>
-<a id="__codelineno-3-25" name="__codelineno-3-25"></a>            <span class="n">numero</span><span class="o">=</span><span class="n">compteurs</span><span class="o">.</span><span class="n">suivant</span><span class="p">(</span><span class="s2">"instances"</span><span class="p">),</span>
-<a id="__codelineno-3-26" name="__codelineno-3-26"></a>             <span class="c1"># the time, including milliseconds</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27"></a>            <span class="n">debut</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">localtime</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"%H:%M:%S.</span><span class="si">%f</span><span class="s2">"</span><span class="p">)[:</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a>        <span class="n">request</span><span class="o">.</span><span class="n">info</span> <span class="o">=</span> <span class="n">RequestInfo</span><span class="p">(</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a>            <span class="c1"># one number per created OBJECT, taken from a counter common to all the requests</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a>            <span class="n">number</span><span class="o">=</span><span class="n">counters</span><span class="o">.</span><span class="n">next_value</span><span class="p">(</span><span class="s2">"instances"</span><span class="p">),</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a>            <span class="c1"># the time, with its milliseconds</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a>            <span class="n">start</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">localtime</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"%H:%M:%S.</span><span class="si">%f</span><span class="s2">"</span><span class="p">)[:</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
 <a id="__codelineno-3-28" name="__codelineno-3-28"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <ul>
 <li>lines 10–13: request scope information: a number and the request time;</li>
-<li>lines 18–28: the middleware creates a <strong><em>[RequeteInfos]</em></strong> object for each request and stores it in the request (Example 12). The number is taken from a counter shared by all requests (the previous module, under a different key); therefore, each object has a different number. The time is written including milliseconds: <strong><em>[%f]</em></strong> represents the microseconds (six digits), from which <strong><em>[[:-3]]</em></strong> removes the last three (a string slice: all characters except the last three). The object is deleted along with the request.</li>
+<li>lines 18–28: the middleware creates a <strong><em>[RequestInfo]</em></strong> object for each request and stores it in the request (Example 12). The number is taken from a counter shared by all requests (the previous module, under a different key); therefore, each object has a different number. The time is written including milliseconds: <strong><em>[%f]</em></strong> represents the microseconds (six digits), from which <strong><em>[[:-3]]</em></strong> removes the last three (a string slice: all characters except the last three). The object is deleted along with the request.</li>
 </ul>
 <p><em>[Django]</em> has no service container, and therefore no “request-scope service”: it is the request itself that carries the objects in this scope. Readers of the <em>[Symfony]</em> course will recall that it was the opposite: in <em>[PHP]</em>, every service was request-scoped, and a cache was required to obtain application scope.</p>
 <h3 id="613-signed-cookies">6.1.3. <span style="color: #1f4d78">Signed Cookies</span></h3>
-<p>A cookie is a piece of data entrusted to the client, which can read and modify it. For a cookie to be trustworthy, it simply needs to be signed: its value travels in plaintext, but it is followed by a signature that only the server knows how to calculate, because it depends on a secret key. A value modified by the client no longer has the correct signature, and the server rejects it. <em>[Django]</em> handles this for us: <strong><em>[reponse.set_signed_cookie(nom, valeur)]</em></strong> sets a signed cookie, and <strong><em>[request.get_signed_cookie(nom, default=...)]</em></strong> returns its value if the signature is correct; otherwise, it returns the default value. The signature is a HMAC (Hash-based Message Authentication Code): a hash of the value (SHA-256), calculated using the application’s secret key (<strong><em>[SECRET_KEY]</em></strong>, example 01), and a “salt” specific to the cookie’s name. <em>[Django]</em> adds the signature date, which allows an outdated cookie to be rejected (<strong><em>[get_signed_cookie(..., max_age=3600)]</em></strong>). The verification process compares the signatures in a time that does not depend on the number of identical characters: a standard comparison would stop at the first differing character, and an attacker could, by measuring the response time, guess the signature character by character. The <strong><em>[django.core.signing]</em></strong> module offers the same functions for signing any data (<strong><em>[signing.dumps]</em></strong>, <strong><em>[signing.loads]</em></strong>): it is this module that signs the flash messages in Example 20.</p>
+<p>A cookie is a piece of data entrusted to the client, which can read and modify it. For a cookie to be trustworthy, it simply needs to be signed: its value travels in plaintext, but it is followed by a signature that only the server knows how to calculate, because it depends on a secret key. A value modified by the client no longer has the correct signature, and the server rejects it. <em>[Django]</em> handles this for us: <strong><em>[response.set_signed_cookie(name, value)]</em></strong> sets a signed cookie, and <strong><em>[request.get_signed_cookie(name, default=...)]</em></strong> returns its value if the signature is correct; otherwise, it returns the default value. The signature is a HMAC (Hash-based Message Authentication Code): a hash of the value (SHA-256), calculated using the application’s secret key (<strong><em>[SECRET_KEY]</em></strong>, example 01), and a “salt” specific to the cookie’s name. <em>[Django]</em> adds the signature date, which allows an outdated cookie to be rejected (<strong><em>[get_signed_cookie(..., max_age=3600)]</em></strong>). The verification process compares the signatures in a time that does not depend on the number of identical characters: a standard comparison would stop at the first differing character, and an attacker could, by measuring the response time, guess the signature character by character. The <strong><em>[django.core.signing]</em></strong> module offers the same functions for signing any data (<strong><em>[signing.dumps]</em></strong>, <strong><em>[signing.loads]</em></strong>): it is this module that signs the flash messages in Example 20.</p>
 <p>This is the principle behind the JWT token, which the next chapter will use for authentication.</p>
 <h3 id="614-the-view-scopesviewspy">6.1.4. <span style="color: #1f4d78">The view: scopes/views.py</span></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
@@ -1087,47 +1087,47 @@
 <span class="normal"><a href="#__codelineno-4-29">29</a></span>
 <span class="normal"><a href="#__codelineno-4-30">30</a></span>
 <span class="normal"><a href="#__codelineno-4-31">31</a></span>
-<span class="normal"><a href="#__codelineno-4-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># ranges/views.py: the four data ranges</span>
+<span class="normal"><a href="#__codelineno-4-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># scopes/views.py: the four scopes of data</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a>
 <a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">django.shortcuts</span><span class="w"> </span><span class="kn">import</span> <span class="n">render</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">django.views.decorators.http</span><span class="w"> </span><span class="kn">import</span> <span class="n">require_GET</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">compteurs</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">counters</span>
 <a id="__codelineno-4-7" name="__codelineno-4-7"></a>
 <a id="__codelineno-4-8" name="__codelineno-4-8"></a>
 <a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="nd">@require_GET</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">portees</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a>     <span class="c1"># APPLICATION: the shared counter</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12"></a>    <span class="n">total</span> <span class="o">=</span> <span class="n">compteurs</span><span class="o">.</span><span class="n">suivant</span><span class="p">(</span><span class="s2">"visites"</span><span class="p">)</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13"></a>     <span class="c1"># SESSION: browser-specific data, stored in CE (a</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14"></a>     <span class="c1"># var/sessions file), retrieved via the session cookie; the session</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15"></a>     <span class="c1"># is used as a dictionary</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16"></a>    <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s2">"visites"</span><span class="p">]</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"visites"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17"></a>     <span class="c1"># CLIENT: data stored by NAVIGATEUR in cookies, sent back to the</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18"></a>     <span class="c1"># server with each request; one in plain text, the other signed</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19"></a>    <span class="n">mes_visites</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">COOKIES</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"mesVisites"</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20"></a>     <span class="c1"># get_signed_cookie: the value if the signature is valid; default otherwise</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21"></a>    <span class="n">mes_visites_signe</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">get_signed_cookie</span><span class="p">(</span><span class="s2">"mesVisitesSigne"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22"></a>    <span class="n">reponse</span> <span class="o">=</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s2">"portees/portees.html"</span><span class="p">,</span> <span class="p">{</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">scopes</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a>    <span class="c1"># APPLICATION: the shared counter</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a>    <span class="n">total</span> <span class="o">=</span> <span class="n">counters</span><span class="o">.</span><span class="n">next_value</span><span class="p">(</span><span class="s2">"visits"</span><span class="p">)</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a>    <span class="c1"># SESSION: data specific to THIS browser, kept by the SERVER (a</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a>    <span class="c1"># file of var/sessions), found thanks to the session cookie; the session</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a>    <span class="c1"># is used like a dictionary</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a>    <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s2">"visits"</span><span class="p">]</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"visits"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a>    <span class="c1"># CLIENT: data kept by the BROWSER in cookies, sent back to the</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a>    <span class="c1"># server with each request; one in plain text, the other signed</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a>    <span class="n">my_visits</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">COOKIES</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"myVisits"</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a>    <span class="c1"># get_signed_cookie: the value if the signature is the right one; default otherwise</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a>    <span class="n">my_visits_signed</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">get_signed_cookie</span><span class="p">(</span><span class="s2">"myVisitsSigned"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a>    <span class="n">response</span> <span class="o">=</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s2">"scopes/scopes.html"</span><span class="p">,</span> <span class="p">{</span>
 <a id="__codelineno-4-23" name="__codelineno-4-23"></a>        <span class="s2">"total"</span><span class="p">:</span> <span class="n">total</span><span class="p">,</span>
-<a id="__codelineno-4-24" name="__codelineno-4-24"></a>        <span class="s2">"instance"</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">infos</span><span class="o">.</span><span class="n">numero</span><span class="p">,</span>
-<a id="__codelineno-4-25" name="__codelineno-4-25"></a>        <span class="s2">"visites_session"</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s2">"visites"</span><span class="p">],</span>
-<a id="__codelineno-4-26" name="__codelineno-4-26"></a>        <span class="s2">"mes_visites"</span><span class="p">:</span> <span class="n">mes_visites</span><span class="p">,</span>
-<a id="__codelineno-4-27" name="__codelineno-4-27"></a>        <span class="s2">"mes_visites_signe"</span><span class="p">:</span> <span class="n">mes_visites_signe</span><span class="p">,</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24"></a>        <span class="s2">"instance"</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">number</span><span class="p">,</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25"></a>        <span class="s2">"session_visits"</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s2">"visits"</span><span class="p">],</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26"></a>        <span class="s2">"my_visits"</span><span class="p">:</span> <span class="n">my_visits</span><span class="p">,</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27"></a>        <span class="s2">"my_visits_signed"</span><span class="p">:</span> <span class="n">my_visits_signed</span><span class="p">,</span>
 <a id="__codelineno-4-28" name="__codelineno-4-28"></a>    <span class="p">})</span>
-<a id="__codelineno-4-29" name="__codelineno-4-29"></a>    <span class="n">reponse</span><span class="o">.</span><span class="n">set_cookie</span><span class="p">(</span><span class="s2">"mesVisites"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">mes_visites</span><span class="p">))</span>
-<a id="__codelineno-4-30" name="__codelineno-4-30"></a>     <span class="c1"># set_signed_cookie: the value, followed by a signature calculated using SECRET_KEY</span>
-<a id="__codelineno-4-31" name="__codelineno-4-31"></a>    <span class="n">reponse</span><span class="o">.</span><span class="n">set_signed_cookie</span><span class="p">(</span><span class="s2">"mesVisitesSigne"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">mes_visites_signe</span><span class="p">))</span>
-<a id="__codelineno-4-32" name="__codelineno-4-32"></a>    <span class="k">return</span> <span class="n">reponse</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29"></a>    <span class="n">response</span><span class="o">.</span><span class="n">set_cookie</span><span class="p">(</span><span class="s2">"myVisits"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">my_visits</span><span class="p">))</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30"></a>    <span class="c1"># set_signed_cookie: the value, followed by a signature computed with SECRET_KEY</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31"></a>    <span class="n">response</span><span class="o">.</span><span class="n">set_signed_cookie</span><span class="p">(</span><span class="s2">"myVisitsSigned"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">my_visits_signed</span><span class="p">))</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32"></a>    <span class="k">return</span> <span class="n">response</span>
 </code></pre></div></td></tr></table></div>
 <ul>
 <li>line 12: the application scope;</li>
-<li>line 16: the session scope. <strong><em>[request.session]</em></strong> is used like a dictionary: <strong><em>[get(clé, défaut)]</em></strong> reads a value, and the assignment writes it. <em>[Django]</em> saves the session at the end of the request. Values must be convertible to JSON (strings, numbers, lists, dictionaries): this is how they are stored;</li>
-<li>Lines 19–21: the client scope, with two cookies. <strong><em>[request.COOKIES]</em></strong> is the dictionary of cookies sent by the browser. Their values are strings provided by the browser and may therefore be missing or invalid: <strong><em>[int]</em></strong> converts them (a cookie named <strong><em>[mesVisites=abc]</em></strong> would throw a <strong><em>[ValueError]</em></strong> exception here and result in a 500 error; a real application would verify the value; see example 07). The value of the signed cookie is accepted only if its signature is correct;</li>
+<li>line 16: the session scope. <strong><em>[request.session]</em></strong> is used like a dictionary: <strong><em>[get(key, default)]</em></strong> reads a value, and the assignment writes it. <em>[Django]</em> saves the session at the end of the request. Values must be convertible to JSON (strings, numbers, lists, dictionaries): this is how they are stored;</li>
+<li>Lines 19–21: the client scope, with two cookies. <strong><em>[request.COOKIES]</em></strong> is the dictionary of cookies sent by the browser. Their values are strings provided by the browser and may therefore be missing or invalid: <strong><em>[int]</em></strong> converts them (a cookie named <strong><em>[myVisits=abc]</em></strong> would throw a <strong><em>[ValueError]</em></strong> exception here and result in a 500 error; a real application would verify the value; see example 07). The value of the signed cookie is accepted only if its signature is correct;</li>
 <li>lines 22–28: the template context;</li>
 <li>lines 29–31: To set a cookie, you need the response object: <strong><em>[render]</em></strong> constructs it (example 13), then <strong><em>[set_cookie]</em></strong> and <strong><em>[set_signed_cookie]</em></strong> add the cookies to it. Without an expiration time (<strong><em>[max_age]</em></strong>), a cookie lasts until the browser is closed (this is a “session” cookie, as defined by browsers).</li>
 </ul>
-<h3 id="615-the-template-templatesporteesporteeshtml">6.1.5. <span style="color: #1f4d78">The template: templates/portees/portees.html</span></h3>
+<h3 id="615-the-template-templatesscopesscopeshtml">6.1.5. <span style="color: #1f4d78">The template: templates/scopes/scopes.html</span></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -1154,38 +1154,38 @@
 <span class="normal"><a href="#__codelineno-5-24">24</a></span>
 <span class="normal"><a href="#__codelineno-5-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cp">&lt;!doctype html&gt;</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2"></a>{% load static %}
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"fr"</span><span class="p">&gt;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
 <a id="__codelineno-5-5" name="__codelineno-5-5"></a>  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
 <a id="__codelineno-5-6" name="__codelineno-5-6"></a>  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"viewport"</span> <span class="na">content</span><span class="o">=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="p">&gt;</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a>  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Portées<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Scopes<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
 <a id="__codelineno-5-8" name="__codelineno-5-8"></a>  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"{% static 'bootstrap/css/bootstrap.min.css' %}"</span><span class="p">&gt;</span>
 <a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 <a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
 <a id="__codelineno-5-11" name="__codelineno-5-11"></a>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"container py-3"</span><span class="p">&gt;</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a>    <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">"h3"</span><span class="p">&gt;</span>Les portées des données<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13"></a>    {# request.infos: the object stored in the request by the middleware; it is the same as the one in the view #}
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>    <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">"h3"</span><span class="p">&gt;</span>The scopes of data<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a>    {# request.info: the object stored in the request by the middleware; it is the same as the view's one #}
 <a id="__codelineno-5-14" name="__codelineno-5-14"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15"></a>      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>application : {{ total }} visite(s) du site, tous navigateurs confondus<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16"></a>      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>requête : objet n° {{ instance }} (n° {{ request.infos.numero }} dans le gabarit),
-<a id="__codelineno-5-17" name="__codelineno-5-17"></a>        requête reçue à {{ request.infos.debut }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18"></a>      {# request.session: the session, also accessible in templates #}
-<a id="__codelineno-5-19" name="__codelineno-5-19"></a>      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>session : {{ visites_session }} visite(s) de ce navigateur ({{ request.session.visites }} dans le gabarit)<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-5-20" name="__codelineno-5-20"></a>      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>client : {{ mes_visites }} visite(s) de ce navigateur (cookie en clair),
-<a id="__codelineno-5-21" name="__codelineno-5-21"></a>        {{ mes_visites_signe }} (cookie signé)<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a>      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>application: {{ total }} visit(s) to the site, all browsers combined<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a>      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>request: object no. {{ instance }} (no. {{ request.info.number }} in the template),
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a>        request received at {{ request.info.start }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a>      {# request.session: the session, also accessible in the templates #}
+<a id="__codelineno-5-19" name="__codelineno-5-19"></a>      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>session: {{ session_visits }} visit(s) from this browser ({{ request.session.visits }} in the template)<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20"></a>      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>client: {{ my_visits }} visit(s) from this browser (plain cookie),
+<a id="__codelineno-5-21" name="__codelineno-5-21"></a>        {{ my_visits_signed }} (signed cookie)<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 <a id="__codelineno-5-22" name="__codelineno-5-22"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
 <a id="__codelineno-5-23" name="__codelineno-5-23"></a>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>line 16: <strong><em>[request.infos]</em></strong>, the object stored in the request by the middleware: this is the same <strong><em>[RequeteInfos]</em></strong> object as the one in the view; the template displays its number, which must be the one received from the view;</li>
+<li>line 16: <strong><em>[request.info]</em></strong>, the object stored in the request by the middleware: this is the same <strong><em>[RequestInfo]</em></strong> object as the one in the view; the template displays its number, which must be the one received from the view;</li>
 <li>line 19: the session is also accessible in the templates, via <strong><em>[request.session]</em></strong>.</li>
 </ul>
 <h3 id="616-execution">6.1.6. <span style="color: #1f4d78">Execution</span></h3>
 <p>After three visits in a browser:</p>
 <p><img src="images/10000000000002BE0000010FABF3BA8F.png" width="428" height="165" style="width:11.322cm;height:4.371cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002BE0000010FABF3BA8F.png" /></p>
-<p>The request object number is greater than the number of visits: on the first visit, the browser also requested the site icon (<strong><em>[/favicon.ico]</em></strong>), which does not exist. This request, which resulted in a 404 error, passed through the middleware and therefore had its own object, <strong><em>[RequeteInfos]</em></strong>.</p>
+<p>The request object number is greater than the number of visits: on the first visit, the browser also requested the site icon (<strong><em>[/favicon.ico]</em></strong>), which does not exist. This request, which resulted in a 404 error, passed through the middleware and therefore had its own object, <strong><em>[RequestInfo]</em></strong>.</p>
 <p>Let’s track the requests with <em>[curl]</em>, which acts as a first browser by storing its cookies in the file <strong><em>[a.txt]</em></strong> (the server has just been started):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>curl -i -c a.txt -b a.txt http://localhost:8000/
 </code></pre></div></td></tr></table></div>
@@ -1205,22 +1205,22 @@
 <span class="normal"><a href="#__codelineno-7-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>HTTP/1.1 200 OK
 <a id="__codelineno-7-2" name="__codelineno-7-2"></a>Content-Type: text/html; charset=utf-8
 <a id="__codelineno-7-3" name="__codelineno-7-3"></a>Vary: Cookie
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a>Set-Cookie: mesVisites=1; Path=/
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a>Set-Cookie: mesVisitesSigne=1:1xAspS:4Nvkcx3peL8C64QPSFZNbB4KciM5Vv3OCuAR9bEMZwc; Path=/
-<a id="__codelineno-7-6" name="__codelineno-7-6"></a>Set-Cookie: sessionid=up3xpr7qnr8gj95hw4w0v1a1v4wnow79; expires=Sun, 11 Oct 2026 17:38:22 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>Set-Cookie: myVisits=1; Path=/
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>Set-Cookie: myVisitsSigned=1:1xAspT:iu2OlkhoUcBt0QBGkt_Gkjm2PoYfUeS6WSsO5KEHt0k; Path=/
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>Set-Cookie: sessionid=ij72qd9hyuhwoqlplawuxycwg6ggccsq; expires=Sun, 11 Oct 2026 17:38:23 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax
 <a id="__codelineno-7-7" name="__codelineno-7-7"></a>...
-<a id="__codelineno-7-8" name="__codelineno-7-8"></a>      &lt;li&gt;application : 1 visite(s) du site, tous navigateurs confondus&lt;/li&gt;
-<a id="__codelineno-7-9" name="__codelineno-7-9"></a>      &lt;li&gt;requête : objet n° 1 (n° 1 dans le gabarit),
-<a id="__codelineno-7-10" name="__codelineno-7-10"></a>        requête reçue à 19:38:22.950&lt;/li&gt;
-<a id="__codelineno-7-11" name="__codelineno-7-11"></a>      &lt;li&gt;session : 1 visite(s) de ce navigateur (1 dans le gabarit)&lt;/li&gt;
-<a id="__codelineno-7-12" name="__codelineno-7-12"></a>      &lt;li&gt;client : 1 visite(s) de ce navigateur (cookie en clair),
-<a id="__codelineno-7-13" name="__codelineno-7-13"></a>        1 (cookie signé)&lt;/li&gt;
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a>      &lt;li&gt;application: 1 visit(s) to the site, all browsers combined&lt;/li&gt;
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a>      &lt;li&gt;request: object no. 1 (no. 1 in the template),
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a>        request received at 19:38:23.123&lt;/li&gt;
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a>      &lt;li&gt;session: 1 visit(s) from this browser (1 in the template)&lt;/li&gt;
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a>      &lt;li&gt;client: 1 visit(s) from this browser (plain cookie),
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a>        1 (signed cookie)&lt;/li&gt;
 <a id="__codelineno-7-14" name="__codelineno-7-14"></a>...
 </code></pre></div></td></tr></table></div>
-<p>The response sets three cookies. The first, <strong><em>[mesVisites]</em></strong>, contains the value in plain text. The second, <strong><em>[mesVisitesSigne]</em></strong>, contains the same value, followed by a colon, the signature date (in base 62), and the signature itself. The third, <strong><em>[sessionid]</em></strong>, is the session ID, valid for two weeks (<strong><em>[Max-Age=1209600]</em></strong> seconds), <strong><em>[HttpOnly],</em></strong> and <strong><em>[SameSite=Lax]</em></strong> (example 20). The session data is stored in a file on the server, <strong><em>[var/sessions/sessionidup3xpr7qnr8gj95hw4w0v1a1v4wnow79]</em></strong>, whose name is derived from the identifier:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>eyJ2aXNpdGVzIjoxfQ:1xAspS:kBLb-izAURiIYXcjkHm2aDLFw8Vdgbm_Jxpq0f0ErA4
+<p>The response sets three cookies. The first, <strong><em>[myVisits]</em></strong>, contains the value in plain text. The second, <strong><em>[myVisitsSigned]</em></strong>, contains the same value, followed by a colon, the signature date (in base 62), and the signature itself. The third, <strong><em>[sessionid]</em></strong>, is the session ID, valid for two weeks (<strong><em>[Max-Age=1209600]</em></strong> seconds), <strong><em>[HttpOnly],</em></strong> and <strong><em>[SameSite=Lax]</em></strong> (example 20). The session data is stored in a file on the server, <strong><em>[var/sessions/sessionidij72qd9hyuhwoqlplawuxycwg6ggccsq]</em></strong>, whose name is derived from the identifier:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>eyJ2aXNpdHMiOjF9:1xAspT:mYytMt_81vJlDI_gaKudIqPgoxAvrGUZbnk578MZr3I
 </code></pre></div></td></tr></table></div>
-<p>Here we can recognize the format of the signed data from <em>[Django]</em>: the data, the date, and the signature. The data is from JSON, encoded in Base64: <strong><em>[eyJ2aXNpdGVzIjoxfQ]</em></strong> decodes to <strong><em>[{&quot;visites&quot;:1}]</em></strong>. The server even signs its own session files: a file modified by a third party would be rejected. A second visit, with the same cookies:</p>
+<p>Here we can recognize the format of the signed data from <em>[Django]</em>: the data, the date, and the signature. The data is from JSON, encoded in Base64: <strong><em>[eyJ2aXNpdHMiOjF9] decodes to [{&quot;visits&quot;:1}]</em></strong>. The server even signs its own session files: a file modified by a third party would be rejected. A second visit, with the same cookies:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>curl -i -c a.txt -b a.txt http://localhost:8000/
 </code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
@@ -1235,16 +1235,16 @@
 <span class="normal"><a href="#__codelineno-10-10">10</a></span>
 <span class="normal"><a href="#__codelineno-10-11">11</a></span>
 <span class="normal"><a href="#__codelineno-10-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>...
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a>Set-Cookie: mesVisites=2; Path=/
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a>Set-Cookie: mesVisitesSigne=2:1xAspS:pxWJZHoXRsALnFoTXbCOEfmTMgpOG0VtI-cosaBWPWo; Path=/
-<a id="__codelineno-10-4" name="__codelineno-10-4"></a>Set-Cookie: sessionid=up3xpr7qnr8gj95hw4w0v1a1v4wnow79; expires=Sun, 11 Oct 2026 17:38:22 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>Set-Cookie: myVisits=2; Path=/
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>Set-Cookie: myVisitsSigned=2:1xAspT:E9lE-GK-yE7WfT5Ak58h2tufzXQ5vLWcWz5UBAS-dLA; Path=/
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>Set-Cookie: sessionid=ij72qd9hyuhwoqlplawuxycwg6ggccsq; expires=Sun, 11 Oct 2026 17:38:23 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax
 <a id="__codelineno-10-5" name="__codelineno-10-5"></a>...
-<a id="__codelineno-10-6" name="__codelineno-10-6"></a>      &lt;li&gt;application : 2 visite(s) du site, tous navigateurs confondus&lt;/li&gt;
-<a id="__codelineno-10-7" name="__codelineno-10-7"></a>      &lt;li&gt;requête : objet n° 2 (n° 2 dans le gabarit),
-<a id="__codelineno-10-8" name="__codelineno-10-8"></a>        requête reçue à 19:38:22.972&lt;/li&gt;
-<a id="__codelineno-10-9" name="__codelineno-10-9"></a>      &lt;li&gt;session : 2 visite(s) de ce navigateur (2 dans le gabarit)&lt;/li&gt;
-<a id="__codelineno-10-10" name="__codelineno-10-10"></a>      &lt;li&gt;client : 2 visite(s) de ce navigateur (cookie en clair),
-<a id="__codelineno-10-11" name="__codelineno-10-11"></a>        2 (cookie signé)&lt;/li&gt;
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a>      &lt;li&gt;application: 2 visit(s) to the site, all browsers combined&lt;/li&gt;
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a>      &lt;li&gt;request: object no. 2 (no. 2 in the template),
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a>        request received at 19:38:23.150&lt;/li&gt;
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a>      &lt;li&gt;session: 2 visit(s) from this browser (2 in the template)&lt;/li&gt;
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a>      &lt;li&gt;client: 2 visit(s) from this browser (plain cookie),
+<a id="__codelineno-10-11" name="__codelineno-10-11"></a>        2 (signed cookie)&lt;/li&gt;
 <a id="__codelineno-10-12" name="__codelineno-10-12"></a>...
 </code></pre></div></td></tr></table></div>
 <p>The session is the same (same ID); its cookie is sent back because the session has been modified, which extends its lifetime. A second “browser,” with its own cookie file, initially empty:</p>
@@ -1255,15 +1255,15 @@
 <span class="normal"><a href="#__codelineno-12-3">3</a></span>
 <span class="normal"><a href="#__codelineno-12-4">4</a></span>
 <span class="normal"><a href="#__codelineno-12-5">5</a></span>
-<span class="normal"><a href="#__codelineno-12-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>      &lt;li&gt;application : 3 visite(s) du site, tous navigateurs confondus&lt;/li&gt;
-<a id="__codelineno-12-2" name="__codelineno-12-2"></a>      &lt;li&gt;requête : objet n° 3 (n° 3 dans le gabarit),
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a>        requête reçue à 19:38:22.987&lt;/li&gt;
-<a id="__codelineno-12-4" name="__codelineno-12-4"></a>      &lt;li&gt;session : 1 visite(s) de ce navigateur (1 dans le gabarit)&lt;/li&gt;
-<a id="__codelineno-12-5" name="__codelineno-12-5"></a>      &lt;li&gt;client : 1 visite(s) de ce navigateur (cookie en clair),
-<a id="__codelineno-12-6" name="__codelineno-12-6"></a>        1 (cookie signé)&lt;/li&gt;
+<span class="normal"><a href="#__codelineno-12-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>      &lt;li&gt;application: 3 visit(s) to the site, all browsers combined&lt;/li&gt;
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a>      &lt;li&gt;request: object no. 3 (no. 3 in the template),
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a>        request received at 19:38:23.167&lt;/li&gt;
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a>      &lt;li&gt;session: 1 visit(s) from this browser (1 in the template)&lt;/li&gt;
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a>      &lt;li&gt;client: 1 visit(s) from this browser (plain cookie),
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a>        1 (signed cookie)&lt;/li&gt;
 </code></pre></div></td></tr></table></div>
-<p>The application counter has continued; the session and cookies for the second browser start over at 1. Each request had its own <strong><em>[RequeteInfos]</em></strong> object, and in each one, the view and template were the same. Finally, a malicious user forges their own cookies: 1,000 visits in <strong><em>[mesVisites]</em></strong>, 999 in <strong><em>[mesVisitesSigne]</em></strong> (with a fabricated signature), and a session ID of their own invention:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>curl -i -b "mesVisites=1000;mesVisitesSigne=999:abc;sessionid=abc" http://localhost:8000/
+<p>The application counter has continued; the session and cookies for the second browser start over at 1. Each request had its own <strong><em>[RequestInfo]</em></strong> object, and in each one, the view and template were the same. Finally, a malicious user forges their own cookies: 1,000 visits in <strong><em>[myVisits]</em></strong>, 999 in <strong><em>[myVisitsSigned]</em></strong> (with a fabricated signature), and a session ID of their own invention:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>curl -i -b "myVisits=1000;myVisitsSigned=999:abc;sessionid=abc" http://localhost:8000/
 </code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
 <span class="normal"><a href="#__codelineno-14-2">2</a></span>
@@ -1274,16 +1274,16 @@
 <span class="normal"><a href="#__codelineno-14-7">7</a></span>
 <span class="normal"><a href="#__codelineno-14-8">8</a></span>
 <span class="normal"><a href="#__codelineno-14-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>...
-<a id="__codelineno-14-2" name="__codelineno-14-2"></a>Set-Cookie: mesVisites=1001; Path=/
-<a id="__codelineno-14-3" name="__codelineno-14-3"></a>Set-Cookie: mesVisitesSigne=1:1xAspT:L8gY1VsFmTmnExyPBzfi-PIKW2S4uEJ_N5BlNbKA7M0; Path=/
-<a id="__codelineno-14-4" name="__codelineno-14-4"></a>Set-Cookie: sessionid=fd7i64x53xvaq1d4vpcxqj74kai4s9n7; expires=Sun, 11 Oct 2026 17:38:23 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a>Set-Cookie: myVisits=1001; Path=/
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a>Set-Cookie: myVisitsSigned=1:1xAspT:iu2OlkhoUcBt0QBGkt_Gkjm2PoYfUeS6WSsO5KEHt0k; Path=/
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a>Set-Cookie: sessionid=l4316xnwacgz81f7yemjar89cfe05jm3; expires=Sun, 11 Oct 2026 17:38:23 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax
 <a id="__codelineno-14-5" name="__codelineno-14-5"></a>...
-<a id="__codelineno-14-6" name="__codelineno-14-6"></a>      &lt;li&gt;session : 1 visite(s) de ce navigateur (1 dans le gabarit)&lt;/li&gt;
-<a id="__codelineno-14-7" name="__codelineno-14-7"></a>      &lt;li&gt;client : 1001 visite(s) de ce navigateur (cookie en clair),
-<a id="__codelineno-14-8" name="__codelineno-14-8"></a>        1 (cookie signé)&lt;/li&gt;
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a>      &lt;li&gt;session: 1 visit(s) from this browser (1 in the template)&lt;/li&gt;
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a>      &lt;li&gt;client: 1001 visit(s) from this browser (plain cookie),
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a>        1 (signed cookie)&lt;/li&gt;
 <a id="__codelineno-14-9" name="__codelineno-14-9"></a>...
 </code></pre></div></td></tr></table></div>
-<p>The plaintext cookie was accepted as-is: 1,001 visits. The cookie <strong><em>[mesVisitesSigne]</em></strong>, however, did not have the correct signature: it was ignored, as if it were missing. Copying the signature from another value (that of <strong><em>[1]</em></strong>, for example, next to the value <strong><em>[999]</em></strong>) doesn’t work any better: the signature depends on the value. As for the made-up session ID, it does not refer to any existing session: <em>[Django]</em> ignores it and creates a new session with a new ID that it chooses itself. The user therefore cannot select another user’s session.</p>
+<p>The plaintext cookie was accepted as-is: 1,001 visits. The cookie <strong><em>[myVisitsSigned]</em></strong>, however, did not have the correct signature: it was ignored, as if it were missing. Copying the signature from another value (that of <strong><em>[1]</em></strong>, for example, next to the value <strong><em>[999]</em></strong>) doesn’t work any better: the signature depends on the value. As for the made-up session ID, it does not refer to any existing session: <em>[Django]</em> ignores it and creates a new session with a new ID that it chooses itself. The user therefore cannot select another user’s session.</p>
 <p>Let’s remember the rule: data coming from the client is trustworthy only if it is protected by the server (signed, as here or as with the token in the chapter on authentication, or encrypted); data that has nothing to hide, and whose value is verified by the server (the language in Example 22), can remain in plaintext. A signature guarantees that a value has not been altered, but it does not hide it: a secret must never be entrusted to the client, even if it is signed.</p>
 
 

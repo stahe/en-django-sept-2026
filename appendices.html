@@ -800,21 +800,21 @@
 <span class="normal"><a href="#__codelineno-2-5">5</a></span>
 <span class="normal"><a href="#__codelineno-2-6">6</a></span>
 <span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>python -m venv .venv                 # create the virtual environment (.venv folder)
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>.venv\Scripts\activate               # Activate it (Windows)
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>.venv\Scripts\activate               # activate it (Windows)
 <a id="__codelineno-2-3" name="__codelineno-2-3"></a>source .venv/bin/activate            # activate it (Linux, macOS)
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>pip install -r requirements.txt      # Install the project libraries
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>pip install -r requirements.txt      # install the project libraries
 <a id="__codelineno-2-5" name="__codelineno-2-5"></a>pip list                             # the installed libraries
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>pip freeze                           # the same list, in requirements.txt format
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a>deactivate                           # exit the environment
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>pip freeze                           # the same list, in the requirements.txt format
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>deactivate                           # leave the environment
 </code></pre></div></td></tr></table></div>
 <p>Under <em>[Windows]</em>, <em>[PowerShell]</em> sometimes refuses to run the activation script (“script execution is disabled on this system”): the command <strong><em>[Set-ExecutionPolicy -Scope CurrentUser RemoteSigned]</em></strong> enables it for the current user. You can also bypass activation by directly calling the environment’s interpreter: <strong><em>[.venv\Scripts\python manage.py runserver]</em></strong>.</p>
-<p>The <strong><em>[.venv]</em></strong> folder cannot be copied from one machine to another (it contains absolute paths and system-specific programs): it must be recreated using the commands above. This is why it is not included in the course materials. The <strong><em>[exemples]</em></strong> folder has its own environment, shared by all 28 examples; the case study has its own.</p>
+<p>The <strong><em>[.venv]</em></strong> folder cannot be copied from one machine to another (it contains absolute paths and system-specific programs): it must be recreated using the commands above. This is why it is not included in the course materials. The <strong><em>[examples]</em></strong> folder has its own environment, shared by all 28 examples; the case study has its own.</p>
 <p>The <em>[mysqlclient]</em> library and the <em>[MySQL]</em> driver (Example 28 and the case study) are written in C. Under <em>[Windows]</em>, <em>[pip]</em> downloads a precompiled version: no action is required. Under <em>[Linux]</em> and <em>[macOS]</em>, <em>[pip]</em> compiles it, and to do so requires the development files from <em>[MySQL]</em> and a compiler:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>sudo apt install python3-dev default-libmysqlclient-dev build-essential pkg-config     # Ubuntu, Debian
 <a id="__codelineno-3-2" name="__codelineno-3-2"></a>brew install mysql-client pkg-config                                                    # macOS
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>export PKG_CONFIG_PATH="$(brew --prefix)/opt/mysql-client/lib/pkgconfig"                # macOS, before `pip install`
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>export PKG_CONFIG_PATH="$(brew --prefix)/opt/mysql-client/lib/pkgconfig"                # macOS, before pip install
 </code></pre></div></td></tr></table></div>
 <p>Without them, <strong><em>[pip install -r requirements.txt]</em></strong> fails on <em>[mysqlclient]</em>, with an error message referring to <strong><em>[pkg-config]</em></strong> or <strong><em>[mysql_config]</em></strong>.</p>
 <h2 id="133-installing-visual-studio-code">13.3. <span style="color: #2e74b5">Installing Visual Studio Code</span></h2>
@@ -824,19 +824,19 @@
 <li>Pylance (from Microsoft, also installed with the Python extension): code completion, code navigation (including the code for <em>[Django]</em>, located in the <strong><em>[.venv]</em></strong> folder), error reporting, and type annotation checking;</li>
 <li>Django (by Baptiste Darthenay): syntax highlighting and shortcuts for the <em>[Django]</em> templates (<strong><em>[.html]</em></strong> files in the <strong><em>[templates]</em></strong> folder).</li>
 </ul>
-<p>Open the <strong><em>[exemples]</em></strong> folder or the case study folder (File menu / Open Folder), then select the interpreter for the folder’s virtual environment (Command Palette, Ctrl+Shift+P, Python: Select Interpreter, then the one for <strong><em>[.venv]</em></strong>). The built-in terminal (Terminal menu / New Terminal) then automatically activates the environment and allows you to run applications and commands from <strong><em>[python manage.py ...]</em></strong> without leaving the editor.</p>
+<p>Open the <strong><em>[examples]</em></strong> folder or the case study folder (File menu / Open Folder), then select the interpreter for the folder’s virtual environment (Command Palette, Ctrl+Shift+P, Python: Select Interpreter, then the one for <strong><em>[.venv]</em></strong>). The built-in terminal (Terminal menu / New Terminal) then automatically activates the environment and allows you to run applications and commands from <strong><em>[python manage.py ...]</em></strong> without leaving the editor.</p>
 <p>To run an application step by step, create a debug configuration (Run menu / Add Configuration, then Python Debugger and Django): the editor launches <strong><em>[manage.py runserver]</em></strong> under the debugger’s control and pauses at the breakpoints set in the views.</p>
 <h2 id="134-installing-mysql-with-laragon">13.4. <span style="color: #2e74b5">Installing MySQL with Laragon</span></h2>
 <p><em>[Laragon]</em> installs a ready-to-use <em>[MySQL]</em> server under <em>[Windows]</em>, along with the <em>[HeidiSQL]</em> administration tool (see “Installing Laragon” in the introduction). After installation:</p>
 <ul>
 <li>the “Start All” button launches the <em>[MySQL]</em> server on port 3306;</li>
 <li>the user <strong><em>[root]</em></strong> has no password: these are the values from the <strong><em>[DATABASES]</em></strong> setting in Example 28 (<strong><em>[config/settings.py]</em></strong>), and the variables <strong><em>[DB_USER]</em></strong> and <strong><em>[DB_PASSWORD]</em></strong> from the <strong><em>[.env]</em></strong> file in the case study;</li>
-<li>the Database button opens <em>[HeidiSQL]</em>, where the File menu / Run a File menu item (SQL) runs the scripts <strong><em>[dbpersonnes.sql]</em></strong> (Example 28) and <strong><em>[dbrdvmedecins2.sql]</em></strong> (case study).</li>
+<li>the Database button opens <em>[HeidiSQL]</em>, where the File menu / Run a File menu item (SQL) runs the scripts <strong><em>[dbpersons.sql]</em></strong> (Example 28) and <strong><em>[dbrdvmedecins2.sql]</em></strong> (case study).</li>
 </ul>
 <p>In <em>[Linux]</em> or <em>[macOS]</em>, install <em>[MySQL]</em> or <em>[MariaDB]</em> using the system’s package manager, and run the scripts using the command-line client <strong><em>[mysql]</em></strong> (<strong><em>[mysql -u root &lt; database/dbrdvmedecins2.sql]</em></strong>). The <em>[mysqlclient]</em> driver and the <em>[MySQL]</em> engine from <em>[Django]</em> work with both without any configuration. Under <em>[Linux]</em>, the <strong><em>[root]</em></strong> account from <em>[MariaDB]</em> is often configured to log in only via the system account <strong><em>[root]</em></strong> (<strong><em>[sudo mysql]</em></strong>): a user is then created for the applications:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>sudo mysql -e "CREATE USER 'cours'@'localhost' IDENTIFIED BY 'cours'; GRANT ALL ON dbpersonnes.* TO 'cours'@'localhost'; GRANT ALL ON dbrdvmedecins2.* TO 'cours'@'localhost';"
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>sudo mysql -e "CREATE USER 'course'@'localhost' IDENTIFIED BY 'course'; GRANT ALL ON dbpersons.* TO 'course'@'localhost'; GRANT ALL ON dbrdvmedecins2.* TO 'course'@'localhost';"
 </code></pre></div></td></tr></table></div>
-<p>and we specify this to the applications: the keys <strong><em>[USER]</em></strong> and <strong><em>[PASSWORD]</em></strong> from the setting <strong><em>[DATABASES]</em></strong> for Example 28, the lines <strong><em>[DB_USER=cours]</em></strong> and <strong><em>[DB_PASSWORD=cours]</em></strong> from the file <strong><em>[.env]</em></strong> for the case study.</p>
+<p>and we specify this to the applications: the keys <strong><em>[USER]</em></strong> and <strong><em>[PASSWORD]</em></strong> from the setting <strong><em>[DATABASES]</em></strong> for Example 28, the lines <strong><em>[DB_USER=course] and [DB_PASSWORD=course]</em></strong> from the file <strong><em>[.env]</em></strong> for the case study.</p>
 <h2 id="135-installing-curl">13.5. <span style="color: #2e74b5">Installing curl</span></h2>
 <p><em>[curl]</em> is included with <em>[Windows]</em> 10 and 11, <em>[macOS],</em> and most <em>[Linux]</em> distributions. On <em>[PowerShell]</em>, you must type <strong><em>[curl.exe]</em></strong>, not <em>[curl]</em>: In older versions of <em>[PowerShell]</em>, <em>[curl]</em> is an alias for another command (<strong><em>[Invoke-WebRequest]</em></strong>), which has different options. In the command prompt for <em>[Windows]</em> (<strong><em>[cmd]</em></strong>), the quotation marks for a string JSON are written as <strong><em>[\&quot;]</em></strong> (example 11), and a string URL that contains <strong><em>[&amp;]</em></strong> must be enclosed in double quotes.</p>
 <h2 id="136-the-django-admin-tool">13.6. <span style="color: #2e74b5">The django-admin tool</span></h2>
@@ -853,17 +853,17 @@
 <span class="normal"><a href="#__codelineno-5-10">10</a></span>
 <span class="normal"><a href="#__codelineno-5-11">11</a></span>
 <span class="normal"><a href="#__codelineno-5-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>django-admin startproject config .        # a new project, whose configuration is the config package
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>python manage.py startapp pages           # a new application, the `pages` folder
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>python manage.py startapp pages           # a new application, the pages folder
 <a id="__codelineno-5-3" name="__codelineno-5-3"></a>python manage.py runserver 8000           # the development server
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a>python manage.py check                    # Check the project (settings, routes, templates, etc.)
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>python manage.py check --deploy           # Check the security settings for a production deployment
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a>python manage.py shell                    # a Python console with Django loaded
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>python manage.py check                    # check the project (settings, routes, models...)
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>python manage.py check --deploy           # check the security settings for production
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>python manage.py shell                    # a Python console, with Django loaded
 <a id="__codelineno-5-7" name="__codelineno-5-7"></a>python manage.py dbshell                  # the database client, with the project settings
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a>python manage.py inspectdb                # Write the models for an existing database (to be reviewed and corrected)
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a>python manage.py makemessages -l en       # identify text to be translated (.po file)
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>python manage.py inspectdb                # write the models of an existing database (to be reviewed and corrected)
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>python manage.py makemessages -l fr       # collect the texts to translate (.po file)
 <a id="__codelineno-5-10" name="__codelineno-5-10"></a>python manage.py compilemessages          # compile the dictionaries (.mo files)
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a>python manage.py collectstatic            # Gather static files for production
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a>python manage.py diffsettings             # Settings that differ from the default values
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>python manage.py collectstatic            # gather the static files for production
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>python manage.py diffsettings             # the settings that differ from the default values
 </code></pre></div></td></tr></table></div>
 <p>The period at the end of the command <strong><em>[startproject]</em></strong> creates the project in the current folder (without it, the project is created in a new folder named <strong><em>[config]</em></strong>). An application created by <strong><em>[startapp]</em></strong> must be added to the <strong><em>[INSTALLED_APPS]</em></strong> settings list. The <strong><em>[inspectdb]</em></strong> command is a valuable tool for an existing database, such as the one in the case study: it reads the tables and generates a first draft of the models using <strong><em>[managed = False]</em></strong>; all that remains is to name the relationships, choose the types, and add the methods. The commands <strong><em>[makemigrations]</em></strong> and <strong><em>[migrate]</em></strong>, which create and update tables based on the models, were not used in this document: its databases are created by SQL scripts, which are shared with other versions of the application.</p>
 
